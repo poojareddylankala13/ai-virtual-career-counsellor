@@ -1,0 +1,1045 @@
+[
+  {
+    "name": "AI Engineer",
+    "domain": "Technology",
+    "description": "Artificial Intelligence Engineers design, develop, and deploy AI models and systems. They specialize in neural networks, natural language processing, and computer vision, bridging the gap between research and production-grade applications.",
+    "required_skills": ["Python", "PyTorch", "TensorFlow", "Deep Learning", "Natural Language Processing", "Computer Vision", "Git", "Mathematics", "Problem Solving"],
+    "academic_path": ["B.Tech/B.E. in Computer Science", "M.Tech in AI/ML", "B.Sc/M.Sc in Data Science"],
+    "learning_roadmap": [
+      "Master Python programming and object-oriented concepts.",
+      "Learn linear algebra, calculus, probability, and statistics.",
+      "Understand core Machine Learning algorithms and libraries (scikit-learn).",
+      "Dive into Deep Learning structures (CNNs, RNNs, Transformers).",
+      "Work with PyTorch or TensorFlow to build and train models.",
+      "Learn MLOps tools for model deployment (Docker, Kubernetes, MLflow)."
+    ],
+    "certifications": [
+      "Google Professional Machine Learning Engineer",
+      "AWS Certified Machine Learning - Specialty",
+      "Microsoft Certified: Azure AI Engineer Associate"
+    ],
+    "courses": [
+      "Deep Learning Specialization by Andrew Ng (Coursera)",
+      "Natural Language Processing Specialization (DeepLearning.AI)",
+      "Fast.ai Practical Deep Learning for Coders"
+    ],
+    "projects": [
+      "End-to-end Image Classifier deployed on AWS/GCP.",
+      "Custom Fine-tuned LLM Chatbot using Hugging Face transformers.",
+      "Real-time Object Detection system using YOLO."
+    ],
+    "growth": "High career growth with progressions from Junior AI Engineer to Senior AI Engineer, Lead AI Architect, and Chief Technology Officer (CTO).",
+    "future_scope": "Excellent future scope as industries aggressively adopt generative AI, automation, and computer vision solutions across sectors globally.",
+    "salary_range": {
+      "entry": "₹6,00,000 - ₹10,00,000",
+      "mid": "₹12,00,000 - ₹22,00,000",
+      "senior": "₹25,00,000 - ₹45,00,000+"
+    }
+  },
+  {
+    "name": "Machine Learning Engineer",
+    "domain": "Technology",
+    "description": "Machine Learning Engineers design and implement scalable ML algorithms and data pipelines. They focus on turning predictive models into software systems that can handle large production data streams.",
+    "required_skills": ["Python", "SQL", "Machine Learning", "Scikit-Learn", "Data Pipelines", "Docker", "Git", "Algorithms", "Software Engineering"],
+    "academic_path": ["B.Tech/B.E. in Computer Science", "B.Sc in Statistics", "M.Sc in Computer Science/Data Science"],
+    "learning_roadmap": [
+      "Develop solid software engineering foundations (Data Structures & Algorithms).",
+      "Learn statistical concepts and regression/classification models.",
+      "Master database querying and data preprocessing with SQL and Pandas.",
+      "Learn ML pipeline orchestration tools (Airflow, Kubeflow).",
+      "Understand cloud-based ML services (SageMaker, Vertex AI).",
+      "Implement monitoring and versioning for data and models."
+    ],
+    "certifications": [
+      "AWS Certified Machine Learning - Specialty",
+      "TensorFlow Developer Certificate",
+      "Google Cloud Professional Data Engineer"
+    ],
+    "courses": [
+      "Machine Learning Specialization by Andrew Ng (Coursera/Stanford)",
+      "Machine Learning Engineering for Production (MLOps) Specialization"
+    ],
+    "projects": [
+      "Customer Churn Prediction system with automated pipeline.",
+      "Recommendation engine using collaborative filtering and content filtering.",
+      "Data pipeline that ingests, cleans, and trains models daily using Airflow."
+    ],
+    "growth": "Accelerated pathway to Senior ML Engineer, MLOps Tech Lead, and Director of AI/ML Operations.",
+    "future_scope": "Growing rapidly due to the need for scalable ML deployment and governance standardizations.",
+    "salary_range": {
+      "entry": "₹5,50,000 - ₹9,00,000",
+      "mid": "₹11,00,000 - ₹20,00,000",
+      "senior": "₹22,00,000 - ₹40,00,000+"
+    }
+  },
+  {
+    "name": "Data Scientist",
+    "domain": "Technology",
+    "description": "Data Scientists extract actionable insights from structured and unstructured data. They use statistical modeling, exploratory data analysis, and predictive modeling to help business leaders make data-driven decisions.",
+    "required_skills": ["Python", "R", "SQL", "Statistics", "Data Visualization", "Tableau", "PowerBI", "Communication", "Machine Learning"],
+    "academic_path": ["B.Sc/M.Sc in Statistics/Mathematics", "B.Tech/B.E. in Computer Science", "MBA in Business Analytics"],
+    "learning_roadmap": [
+      "Build a deep understanding of mathematical statistics, hypothesis testing, and probability.",
+      "Learn SQL for querying database tables and data aggregation.",
+      "Master Python libraries (NumPy, Pandas, Matplotlib, Seaborn).",
+      "Understand exploratory data analysis (EDA) techniques.",
+      "Learn basic machine learning models for forecasting and classification.",
+      "Learn BI tools (Tableau, PowerBI) and data storytelling techniques."
+    ],
+    "certifications": [
+      "IBM Data Science Professional Certificate",
+      "Google Data Analytics Professional Certificate",
+      "Microsoft Certified: Power BI Data Analyst Associate"
+    ],
+    "courses": [
+      "Applied Data Science with Python Specialization (University of Michigan)",
+      "Statistics and R (Harvard University on edX)"
+    ],
+    "projects": [
+      "Exploratory analysis of global climate change datasets with interactive dashboards.",
+      "A housing price forecasting model using regression techniques.",
+      "A customer segmentation analysis using K-Means clustering."
+    ],
+    "growth": "Progresses from Junior Analyst to Senior Data Scientist, Principal Data Scientist, and Chief Data Officer (CDO).",
+    "future_scope": "Data-driven strategy is critical for business survival, making Data Scientists highly valued assets across all corporate sectors.",
+    "salary_range": {
+      "entry": "₹5,00,000 - ₹8,50,000",
+      "mid": "₹10,50,000 - ₹18,00,000",
+      "senior": "₹20,00,000 - ₹38,00,000+"
+    }
+  },
+  {
+    "name": "Software Engineer",
+    "domain": "Technology",
+    "description": "Software Engineers write, test, debug, and maintain code for applications and operating systems. They work with programming languages, system design, and software architecture to build reliable software solutions.",
+    "required_skills": ["Java", "C++", "Python", "Data Structures", "Algorithms", "Object-Oriented Programming", "Git", "SQL", "System Design"],
+    "academic_path": ["B.Tech/B.E. in Computer Science/IT", "BCA / MCA", "B.Sc/M.Sc in Computer Science"],
+    "learning_roadmap": [
+      "Learn a core backend language like Java, C++, or Python.",
+      "Solve algorithmic problems to master Data Structures and Algorithms (DSA).",
+      "Learn version control using Git and GitHub.",
+      "Understand Relational Database management systems and SQL queries.",
+      "Learn software design principles (SOLID, Design Patterns) and Web APIs.",
+      "Study system design concepts (scaling, load balancing, microservices)."
+    ],
+    "certifications": [
+      "Oracle Certified Professional Java SE Developer",
+      "AWS Certified Developer - Associate",
+      "Scrum Alliance Certified ScrumMaster (CSM)"
+    ],
+    "courses": [
+      "Data Structures and Algorithms Specialization (UC San Diego on Coursera)",
+      "Software Design and Architecture Specialization (University of Alberta)"
+    ],
+    "projects": [
+      "Multi-threaded chat server in Java/C++ supporting concurrent connections.",
+      "Inventory Management REST API with full CRUD operations and database integration.",
+      "E-commerce backend service using microservices architecture."
+    ],
+    "growth": "Progresses to Senior Software Engineer, Tech Lead, Engineering Manager, or Principal Architect.",
+    "future_scope": "Solid long-term demand. The digitalization of services requires constant development of software systems.",
+    "salary_range": {
+      "entry": "₹4,50,000 - ₹7,50,000",
+      "mid": "₹9,00,000 - ₹16,00,000",
+      "senior": "₹18,00,000 - ₹32,00,000+"
+    }
+  },
+  {
+    "name": "Full Stack Developer",
+    "domain": "Technology",
+    "description": "Full Stack Developers work on both the front-end (user interface) and back-end (database, APIs, and server-side logic) of web applications. They construct complete, end-to-end web products.",
+    "required_skills": ["JavaScript", "HTML", "CSS", "React", "Node.js", "Express", "MongoDB", "SQL", "Git", "REST APIs"],
+    "academic_path": ["B.Tech in CS/IT", "BCA / MCA", "Full Stack Bootcamps"],
+    "learning_roadmap": [
+      "Master front-end essentials: HTML5, CSS3, and JavaScript (ES6+).",
+      "Learn modern CSS frameworks and front-end libraries like React.js or Vue.js.",
+      "Study server-side runtime systems (Node.js) and frameworks (Express.js).",
+      "Learn database management, choosing SQL (PostgreSQL) or NoSQL (MongoDB).",
+      "Understand RESTful API development and security protocols.",
+      "Deploy apps to hosting platforms (Heroku, Netlify, AWS S3)."
+    ],
+    "certifications": [
+      "Meta Front-End/Back-End Developer Professional Certificate",
+      "AWS Certified Developer - Associate"
+    ],
+    "courses": [
+      "Full Stack Web Development with React Specialization (HKUST on Coursera)",
+      "The Web Developer Bootcamp by Colt Steele (Udemy)"
+    ],
+    "projects": [
+      "Full-featured Social Media Platform with real-time chat (MERN stack).",
+      "Collaborative project management dashboard with database and auth integrations.",
+      "Personal portfolio site using TailwindCSS, React, and an API backend."
+    ],
+    "growth": "Progresses to Senior Web Developer, Full Stack Lead, Solution Architect, or VP of Engineering.",
+    "future_scope": "Extremely popular for startups and product companies because of their ability to build prototypes and scale apps independently.",
+    "salary_range": {
+      "entry": "₹4,00,000 - ₹7,00,000",
+      "mid": "₹8,50,000 - ₹15,00,000",
+      "senior": "₹16,00,000 - ₹30,00,000+"
+    }
+  },
+  {
+    "name": "Cybersecurity Engineer",
+    "domain": "Technology",
+    "description": "Cybersecurity Engineers secure an organization's computer networks, systems, and data. They identify vulnerabilities, prevent cyber attacks, and design protective hardware/software infrastructures.",
+    "required_skills": ["Networking", "Linux", "Penetration Testing", "Security Protocols", "Ethical Hacking", "Cryptography", "Python", "SIEM Tools", "Risk Assessment"],
+    "academic_path": ["B.Tech in CS/Cybersecurity", "B.Sc in Cyber Security", "BCA + Cybersecurity diploma"],
+    "learning_roadmap": [
+      "Learn computer networking foundations (TCP/IP model, routing, switching).",
+      "Master Linux operating system commands and administration.",
+      "Understand basic scripting (Python/Bash) for security automation.",
+      "Learn ethical hacking techniques, packet analysis (Wireshark), and firewalls.",
+      "Study vulnerabilities (OWASP Top 10) and penetration testing procedures.",
+      "Learn log monitoring using SIEM systems (Splunk, ELK Stack)."
+    ],
+    "certifications": [
+      "CompTIA Security+",
+      "Certified Ethical Hacker (CEH)",
+      "Certified Information Systems Security Professional (CISSP)"
+    ],
+    "courses": [
+      "Google Cybersecurity Professional Certificate (Coursera)",
+      "Introduction to Cyber Security Specialization (NYU on Coursera)"
+    ],
+    "projects": [
+      "Vulnerability assessment report of a simulated network system using Nessus.",
+      "Intrusion Detection System setup using Snort with custom rules.",
+      "Security scanning script in Python to identify open ports and services."
+    ],
+    "growth": "Strong progression to Security Analyst, Cybersecurity Consultant, Incident Response Manager, and Chief Information Security Officer (CISO).",
+    "future_scope": "Critical. Cyber threats are scaling, making security experts some of the most sought-after professionals in the tech industry.",
+    "salary_range": {
+      "entry": "₹5,00,000 - ₹8,00,000",
+      "mid": "₹9,50,000 - ₹17,00,000",
+      "senior": "₹19,00,000 - ₹35,00,000+"
+    }
+  },
+  {
+    "name": "Cloud Engineer",
+    "domain": "Technology",
+    "description": "Cloud Engineers plan, design, manage, and scale cloud computing architectures. They migrate physical servers to the cloud, configure storage/databases, and manage container deployments.",
+    "required_skills": ["AWS", "GCP", "Docker", "Kubernetes", "Linux", "Terraform", "Infrastructure as Code", "Networking", "Python"],
+    "academic_path": ["B.Tech/B.E. in CS/IT", "BCA / MCA", "Cloud Architect Certifications"],
+    "learning_roadmap": [
+      "Learn cloud fundamentals: computing, databases, storage, and IAM.",
+      "Gain proficiency in Linux command line and shell scripting.",
+      "Learn containerization technologies (Docker) and orchestration (Kubernetes).",
+      "Understand Networking in the cloud (VPCs, Subnets, Gateways, Route53).",
+      "Master Infrastructure as Code (IaC) using Terraform.",
+      "Learn CI/CD pipeline automation (GitHub Actions, Jenkins)."
+    ],
+    "certifications": [
+      "AWS Certified Solutions Architect - Associate",
+      "Google Associate Cloud Engineer",
+      "Microsoft Certified: Azure Administrator Associate"
+    ],
+    "courses": [
+      "AWS Cloud Solutions Architect Specialization (Coursera)",
+      "Preparing for Google Cloud Associate Cloud Engineer Exam (Coursera)"
+    ],
+    "projects": [
+      "Automated server setup using Terraform scripts and AWS VPC.",
+      "Multi-container application deployment on Kubernetes cluster.",
+      "CI/CD Pipeline running unit tests and deploying build artifacts to AWS S3/EC2."
+    ],
+    "growth": "Progresses from Cloud Engineer to DevOps Engineer, Cloud Architect, and VP of Cloud Infrastructure.",
+    "future_scope": "Excellent. As digital transformation continues, virtually all enterprises are transitioning systems to the cloud.",
+    "salary_range": {
+      "entry": "₹4,80,000 - ₹8,00,000",
+      "mid": "₹9,50,000 - ₹16,50,000",
+      "senior": "₹18,00,000 - ₹33,00,000+"
+    }
+  },
+  {
+    "name": "Chartered Accountant",
+    "domain": "Commerce",
+    "description": "Chartered Accountants manage auditing, taxation, financial planning, and accounting operations for individuals, corporations, and government organizations. They ensure financial transparency and compliance with tax laws.",
+    "required_skills": ["Taxation", "Auditing", "Corporate Law", "Financial Accounting", "Financial Planning", "Tally", "MS Excel", "Analytical Skills"],
+    "academic_path": ["B.Com/M.Com", "ICAI CA Course (Foundation, Intermediate, Final)"],
+    "learning_roadmap": [
+      "Enroll in the Institute of Chartered Accountants of India (ICAI) or equivalent global body.",
+      "Pass the CA Foundation exam focusing on basic accounts and mercantile law.",
+      "Pass CA Intermediate, covering audit, taxation, and financial management.",
+      "Complete a mandatory 2-3 years Articleship under a practicing CA.",
+      "Pass the CA Final exams covering strategic cost management and corporate law.",
+      "Acquire membership in the national accounting institute to practice."
+    ],
+    "certifications": [
+      "ICAI Membership",
+      "Association of Chartered Certified Accountants (ACCA)",
+      "Certified Public Accountant (CPA)"
+    ],
+    "courses": [
+      "ICAI Articleship Training modules",
+      "Advanced Taxation courses",
+      "Financial Analysis with Excel"
+    ],
+    "projects": [
+      "Detailed simulated corporate audit report with validation.",
+      "A comprehensive corporate tax compliance and optimization analysis.",
+      "Filing and processing documentation files for standard business clients."
+    ],
+    "growth": "Progresses to Audit Manager, Tax Consultant, Partner at an accounting firm, and Chief Financial Officer (CFO).",
+    "future_scope": "Extremely stable. Tax laws and corporate regulations continuously require certified professionals to maintain compliance.",
+    "salary_range": {
+      "entry": "₹7,00,000 - ₹10,00,000",
+      "mid": "₹12,00,000 - ₹20,00,000",
+      "senior": "₹22,00,000 - ₹45,00,000+"
+    }
+  },
+  {
+    "name": "Financial Analyst",
+    "domain": "Commerce",
+    "description": "Financial Analysts evaluate investment data, market trends, and company performance. They build financial models, write reports, and recommend investments to buy/sell side firms, pension funds, and corporations.",
+    "required_skills": ["Financial Modeling", "Corporate Finance", "MS Excel", "Valuation", "Accounting", "Data Analysis", "Reporting", "Economics"],
+    "academic_path": ["B.Com in Finance", "BBA in Finance", "MBA in Finance", "CFA Candidate"],
+    "learning_roadmap": [
+      "Learn core corporate accounting and financial statement analysis.",
+      "Master advanced MS Excel features (VLOOKUP, Pivot Tables, Macros).",
+      "Enroll in the Chartered Financial Analyst (CFA) program.",
+      "Learn financial modeling (DCF analysis, comparable company analysis).",
+      "Understand financial markets, valuation techniques, and portfolio theories.",
+      "Develop skills in summarizing financial trends into business reports."
+    ],
+    "certifications": [
+      "Chartered Financial Analyst (CFA - Level 1/2/3)",
+      "Financial Risk Manager (FRM)",
+      "Financial Modeling & Valuation Analyst (FMVA)"
+    ],
+    "courses": [
+      "Financial Markets by Robert Shiller (Yale on Coursera)",
+      "Investment Management Specialization (Geneva on Coursera)"
+    ],
+    "projects": [
+      "Discounted Cash Flow (DCF) valuation model of a public stock.",
+      "Comparable Company Analysis (CCA) matrix comparing sector competitors.",
+      "Quarterly earnings presentation analysis for a selected corporate sector."
+    ],
+    "growth": "Moves to Senior Financial Analyst, Portfolio Manager, Investment Associate, and Director of Corporate Finance.",
+    "future_scope": "Strong demand driven by expansion of fintech, asset management, and global financial markets.",
+    "salary_range": {
+      "entry": "₹4,50,000 - ₹7,50,000",
+      "mid": "₹8,50,000 - ₹15,00,000",
+      "senior": "₹16,00,000 - ₹30,00,000+"
+    }
+  },
+  {
+    "name": "Investment Banker",
+    "domain": "Commerce",
+    "description": "Investment Bankers assist corporations, governments, and institutional entities in raising capital through debt and equity offerings. They advise on Mergers & Acquisitions (M&A) and facilitate IPOs.",
+    "required_skills": ["Valuation", "M&A", "Financial Modeling", "Negotiation", "Presentation", "Pitch Decks", "Excel", "Accounting", "Corporate Finance"],
+    "academic_path": ["MBA in Finance (Top tier)", "B.Com / BBA + CFA", "M.Sc in Finance"],
+    "learning_roadmap": [
+      "Obtain an undergraduate degree in finance, economics, or mathematics.",
+      "Pursue a top-tier MBA degree or clear CFA levels.",
+      "Master strategic corporate finance, company valuations, and investment markets.",
+      "Intern at an investment bank to gain network and transaction experience.",
+      "Learn to draft pitch books, transaction structures, and terms.",
+      "Master complex financial modeling and due diligence steps."
+    ],
+    "certifications": [
+      "CFA (Chartered Financial Analyst)",
+      "Investment Banking Certified Professional",
+      "FINRA licensing (Series 7, Series 79)"
+    ],
+    "courses": [
+      "Mergers & Acquisitions Specialization (University of Illinois)",
+      "Valuation Methodology courses by Aswath Damodaran"
+    ],
+    "projects": [
+      "Comprehensive buy-side M&A analysis proposal for a tech sector deal.",
+      "Full valuation pitch deck of a company planning a simulated IPO.",
+      "Debt advisory report detailing financing options for an infrastructure project."
+    ],
+    "growth": "Progresses from Analyst to Associate, Vice President (VP), Director, and Managing Director (MD). High performance-based bonuses.",
+    "future_scope": "Extremely lucrative, though highly competitive and demanding. Global dealmaking activities drive steady opportunities.",
+    "salary_range": {
+      "entry": "₹10,00,000 - ₹18,00,000",
+      "mid": "₹20,00,000 - ₹40,00,000",
+      "senior": "₹50,00,000 - ₹1,00,00,000+"
+    }
+  },
+  {
+    "name": "Business Analyst",
+    "domain": "Commerce",
+    "description": "Business Analysts act as a bridge between business stakeholders and technology teams. They analyze processes, gather technical requirements, and define system specifications to optimize business efficiency.",
+    "required_skills": ["SQL", "Excel", "Data Analysis", "Requirements Gathering", "UML", "Agile", "Jira", "Tableau", "PowerBI", "Communication"],
+    "academic_path": ["B.Com in Business/Finance", "BCA / B.Tech", "MBA in Business Analytics/Operations"],
+    "learning_roadmap": [
+      "Develop solid communications and business operation foundations.",
+      "Learn data visualization tools like Excel, PowerBI, or Tableau.",
+      "Understand software development methodologies (Agile, Scrum).",
+      "Learn to gather requirements, write user stories, and draw UML flowcharts.",
+      "Master database retrieval operations using basic SQL.",
+      "Gain proficiency in ticketing and project tracking tools like Jira."
+    ],
+    "certifications": [
+      "Certified Business Analysis Professional (CBAP)",
+      "PMI Professional in Business Analysis (PMI-PBA)",
+      "Professional Scrum Product Owner (PSPO)"
+    ],
+    "courses": [
+      "Business Analysis Foundations (LinkedIn Learning)",
+      "Agile Project Management (Google Professional Certificate)"
+    ],
+    "projects": [
+      "Business Requirement Document (BRD) for an inventory system upgrade.",
+      "Data-driven analysis identifying operational bottlenecks in a logistics chain.",
+      "A complete backlog sprint setup for a mock software development cycle."
+    ],
+    "growth": "Moves to Senior Business Analyst, Product Owner, Product Manager, or Business Consultant.",
+    "future_scope": "Excellent. Corporate systems are complex, demanding analysts to continually translate needs into digital requirements.",
+    "salary_range": {
+      "entry": "₹4,20,000 - ₹7,00,000",
+      "mid": "₹8,00,000 - ₹14,00,000",
+      "senior": "₹15,00,000 - ₹26,00,000+"
+    }
+  },
+  {
+    "name": "Marketing Manager",
+    "domain": "Commerce",
+    "description": "Marketing Managers design, manage, and execute promotional strategies for brands. They conduct market research, set campaign budgets, coordinate creative design, and analyze product performance across marketing channels.",
+    "required_skills": ["Brand Strategy", "Campaign Management", "Market Research", "Budgeting", "SEO/SEM", "Content Strategy", "Analytical Skills", "Leadership"],
+    "academic_path": ["BBA in Marketing", "B.Com", "MBA in Marketing / Brand Management"],
+    "learning_roadmap": [
+      "Study consumer behavior, market research, and communication methods.",
+      "Master general management and marketing frameworks (4 Ps of Marketing).",
+      "Understand multi-channel campaigns (digital, print, TV, experiential).",
+      "Develop analytical skills to track ROI and campaign performance metrics.",
+      "Gain leadership experience to manage creative and media agencies.",
+      "Build expertise in customer lifetime value (CLV) and marketing budgets."
+    ],
+    "certifications": [
+      "AMA Certified Professional Marketer",
+      "HubSpot Inbound Marketing Certification",
+      "Google Ads / Analytics Certifications"
+    ],
+    "courses": [
+      "Marketing Mix Implementation Specialization (IE Business School)",
+      "Strategic Marketing Specialization (University of Illinois)"
+    ],
+    "projects": [
+      "Full marketing campaign plan for launching an organic cosmetic product.",
+      "Detailed brand audit and positioning recommendation report for an apparel brand.",
+      "Market research survey design and analysis evaluating consumer demand."
+    ],
+    "growth": "Moves to Brand Manager, Marketing Director, Chief Marketing Officer (CMO), or Managing Director.",
+    "future_scope": "Strong. Companies constantly compete for consumer attention, ensuring steady demand for innovative brand managers.",
+    "salary_range": {
+      "entry": "₹4,50,000 - ₹8,00,000",
+      "mid": "₹9,00,000 - ₹17,00,000",
+      "senior": "₹18,00,000 - ₹34,00,000+"
+    }
+  },
+  {
+    "name": "Graphic Designer",
+    "domain": "Arts",
+    "description": "Graphic Designers create visual concepts to communicate ideas that inspire, inform, and captivate consumers. They design layouts for brochures, advertisements, magazines, and websites using industry standard design software.",
+    "required_skills": ["Photoshop", "Illustrator", "InDesign", "Typography", "Color Theory", "Branding", "Layout Design", "Creativity", "Visual Arts"],
+    "academic_path": ["Bachelor of Fine Arts (BFA)", "Diploma in Graphic Design/Multimedia", "Self-Taught Portfolio"],
+    "learning_roadmap": [
+      "Learn core principles of design, color theory, typography, and compositions.",
+      "Master vector design software (Adobe Illustrator) and image editing (Adobe Photoshop).",
+      "Learn print publication design layouts using Adobe InDesign.",
+      "Understand digital file extensions, resolution scales, and output layouts.",
+      "Create high-quality original assets for brand design (logos, patterns).",
+      "Build a digital portfolio highlighting diverse design samples (Behance/Dribbble)."
+    ],
+    "certifications": [
+      "Adobe Certified Professional (Photoshop/Illustrator)",
+      "CalArts Graphic Design Specialization Certificate"
+    ],
+    "courses": [
+      "Graphic Design Specialization by CalArts (Coursera)",
+      "Adobe Illustrator CC Masterclass (Udemy)"
+    ],
+    "projects": [
+      "Branding and visual identity style guide for a mock startup.",
+      "Print brochure layout and marketing poster designs for a local event.",
+      "Vector character designs and custom product package layouts."
+    ],
+    "growth": "Progresses to Senior Graphic Designer, Art Director, Creative Director, or Freelance Design Consultant.",
+    "future_scope": "Stable, with growing integration of digital branding and media assets in web applications and marketing.",
+    "salary_range": {
+      "entry": "₹3,00,000 - ₹5,00,000",
+      "mid": "₹6,00,000 - ₹11,00,000",
+      "senior": "₹12,00,000 - ₹22,00,000+"
+    }
+  },
+  {
+    "name": "UI/UX Designer",
+    "domain": "Arts",
+    "description": "UI/UX Designers create seamless, user-friendly digital interfaces for websites, mobile applications, and software products. They focus on user research, wireframing, interactive prototyping, and visual design aesthetics.",
+    "required_skills": ["Figma", "Adobe XD", "Wireframing", "Prototyping", "User Research", "Information Architecture", "Visual Design", "Usability Testing"],
+    "academic_path": ["B.Des / M.Des", "BFA", "UI/UX Professional Bootcamps"],
+    "learning_roadmap": [
+      "Study human-computer interaction (HCI) and user experience principles.",
+      "Learn industry design tools, primarily Figma or Adobe XD.",
+      "Understand user research methods (interviews, personas, journey maps).",
+      "Learn wireframing to establish layout hierarchies.",
+      "Develop interactive prototypes to simulate user flows and animations.",
+      "Conduct usability tests to iterate and improve layout interfaces."
+    ],
+    "certifications": [
+      "Google UX Design Professional Certificate",
+      "Interaction Design Foundation (IxDF) Certifications",
+      "NN/g UX Certification"
+    ],
+    "courses": [
+      "User Interface/User Experience Design Specialization (Coursera/CalArts)",
+      "UI/UX Design courses by IxDF"
+    ],
+    "projects": [
+      "End-to-end design and prototype of a fitness tracking mobile application.",
+      "Responsive redesign of an e-commerce website with usability testing reports.",
+      "Consistent UI Design System containing components, icons, and themes."
+    ],
+    "growth": "Moves to Senior UI/UX Designer, Lead Product Designer, UX Director, or VP of Product Design.",
+    "future_scope": "Excellent. Software products compete on user experience, keeping demand for skilled UX designers very high.",
+    "salary_range": {
+      "entry": "₹4,50,000 - ₹7,50,000",
+      "mid": "₹8,50,000 - ₹16,00,000",
+      "senior": "₹18,00,000 - ₹32,00,000+"
+    }
+  },
+  {
+    "name": "Animator",
+    "domain": "Arts",
+    "description": "Animators create series of images known as frames to generate movement in films, television shows, video games, and web media. They specialize in 2D, 3D, and stop-motion animations.",
+    "required_skills": ["3ds Max", "Maya", "Blender", "After Effects", "2D/3D Modeling", "Rigging", "Storyboarding", "Patience", "Creativity"],
+    "academic_path": ["B.Sc/B.A. in Animation & VFX", "Diploma in 3D Animation", "Self-Taught Portfolio"],
+    "learning_roadmap": [
+      "Master the 12 basic principles of animation (timing, ease in/out, squash/stretch).",
+      "Learn to storyboard key conceptual drawings.",
+      "Gain proficiency in 2D animation tools (Adobe Animate/After Effects).",
+      "Learn 3D modeling and animation software (Autodesk Maya, Blender).",
+      "Master character rigging and texturing procedures.",
+      "Create a professional animation showreel (demoreel) highlighting motions."
+    ],
+    "certifications": [
+      "Autodesk Certified Professional in Maya",
+      "Adobe Certified Professional in After Effects"
+    ],
+    "courses": [
+      "3D Animation Courses by Animation Mentor",
+      "Blender Creator: Learn 3D Modelling for Beginners (Udemy)"
+    ],
+    "projects": [
+      "A 30-second character acting sequence highlighting emotional change.",
+      "3D walk cycle animation showcasing realistic weights and balances.",
+      "A conceptual video storyboard and title sequence animation."
+    ],
+    "growth": "Progresses to Lead Animator, VFX Supervisor, Technical Director, or Animation Producer.",
+    "future_scope": "Strong, driven by the expansion of gaming, streaming platforms, and marketing video productions.",
+    "salary_range": {
+      "entry": "₹3,00,000 - ₹5,50,000",
+      "mid": "₹6,00,000 - ₹12,00,000",
+      "senior": "₹13,00,000 - ₹24,00,000+"
+    }
+  },
+  {
+    "name": "Content Writer",
+    "domain": "Arts",
+    "description": "Content Writers create written material for websites, blogs, social media channels, advertisements, and whitepapers. They conduct research and write targeted articles that educate and attract specific target audiences.",
+    "required_skills": ["Writing", "Editing", "SEO", "Copywriting", "Research", "Content Strategy", "WordPress", "Creativity", "Proofreading"],
+    "academic_path": ["B.A./M.A. in English/Journalism", "B.Sc in Mass Communication", "Any Bachelor's + Writing Portfolio"],
+    "learning_roadmap": [
+      "Practice clear, grammatically correct writing styles.",
+      "Learn search engine optimization (SEO) techniques for web visibility.",
+      "Study copywriting structures for advertisements and campaigns.",
+      "Learn web publishing systems, particularly WordPress.",
+      "Master keyword integration and editing/formatting rules.",
+      "Assemble a portfolio containing articles, blog posts, and copy assets."
+    ],
+    "certifications": [
+      "HubSpot Content Marketing Certification",
+      "Semrush SEO Fundamentals Certification",
+      "Google Digital Garage Certification"
+    ],
+    "courses": [
+      "Content Strategy Specialization (Northwestern University on Coursera)",
+      "Writing Tools & Editing Techniques (Udemy)"
+    ],
+    "projects": [
+      "An SEO-optimized cluster of blog articles targeting tech topics.",
+      "Corporate Whitepaper detailing market research and solutions.",
+      "Email marketing campaign sequence designed to convert trial accounts."
+    ],
+    "growth": "Moves to Senior Content Writer, Content Strategist, Editor-in-Chief, or Content Lead.",
+    "future_scope": "Good, though evolving. Human writers focusing on high-quality, research-driven, and authoritative content are critical.",
+    "salary_range": {
+      "entry": "₹2,50,000 - ₹4,50,000",
+      "mid": "₹5,00,000 - ₹9,50,000",
+      "senior": "₹10,00,000 - ₹18,00,000+"
+    }
+  },
+  {
+    "name": "Digital Marketer",
+    "domain": "Arts",
+    "description": "Digital Marketers plan, execute, and analyze promotional campaigns across digital channels. They specialize in search engine optimization (SEO), search engine marketing (SEM), social media marketing, and email campaigns.",
+    "required_skills": ["SEO", "Google Ads", "Google Analytics", "Social Media Marketing", "Email Marketing", "Copywriting", "Content Planning", "Data Interpretation"],
+    "academic_path": ["BBA in Digital Marketing", "B.Com / B.A.", "Digital Marketing Certifications"],
+    "learning_roadmap": [
+      "Understand digital channel frameworks (Paid, Earned, Owned Media).",
+      "Master keyword research, technical SEO optimization, and link building.",
+      "Learn to configure and run ad campaigns using Google Ads and Meta Ads Manager.",
+      "Study email marketing automation systems (Mailchimp, HubSpot).",
+      "Master data interpretation using web tracking analytics (Google Analytics 4).",
+      "Develop social media calendars and content planning schedules."
+    ],
+    "certifications": [
+      "Google Digital Marketing & E-commerce Professional Certificate",
+      "Meta Certified Digital Marketing Associate",
+      "HubSpot Inbound Marketing Certification"
+    ],
+    "courses": [
+      "Digital Marketing Specialization by University of Illinois (Coursera)",
+      "Complete Digital Marketing Course (Udemy)"
+    ],
+    "projects": [
+      "Detailed SEO audit and optimization strategy for a local retail shop.",
+      "Simulated $1,000 ad campaign budget and targeting strategy deck.",
+      "Social media content calendar and graphic layout templates."
+    ],
+    "growth": "Progresses to Digital Marketing Specialist, Campaign Lead, Digital Marketing Director, or VP of Growth.",
+    "future_scope": "Excellent. Businesses continuously move marketing budgets from traditional media to digital spaces.",
+    "salary_range": {
+      "entry": "₹3,00,000 - ₹5,50,000",
+      "mid": "₹6,00,000 - ₹12,00,000",
+      "senior": "₹13,00,000 - ₹25,00,000+"
+    }
+  },
+  {
+    "name": "Doctor",
+    "domain": "Healthcare",
+    "description": "Doctors diagnose, treat, and prevent human illnesses and injuries. They examine patients, prescribe medications, interpret medical test results, and perform surgical procedures to maintain health.",
+    "required_skills": ["Medical Diagnosis", "Pharmacology", "Surgical Skills", "Empathy", "Decision Making", "Patience", "Critical Thinking", "Clinical Care"],
+    "academic_path": ["MBBS (Bachelor of Medicine, Bachelor of Surgery)", "MD/MS (Doctor of Medicine/Master of Surgery)"],
+    "learning_roadmap": [
+      "Prepare for and clear medical entrance examinations (NEET-UG in India).",
+      "Complete the 5.5-year MBBS course, including anatomy, pathology, and surgery.",
+      "Complete the 1-year mandatory clinical articleship/internship.",
+      "Register with the Medical Council to practice medicine.",
+      "Pursue specialization exams (NEET-PG) for MD (Medicine) or MS (Surgery).",
+      "Complete residency training under senior consultants."
+    ],
+    "certifications": [
+      "Medical Council Registration Certificate",
+      "Specialty Board Certifications",
+      "Basic Life Support (BLS) & ACLS"
+    ],
+    "courses": [
+      "MBBS University Syllabus coursework",
+      "MD/MS residency modules",
+      "Continuing Medical Education (CME) credits"
+    ],
+    "projects": [
+      "Supervised hospital ward clinical rotation evaluations.",
+      "Case study report detailing diagnostic processes for rare clinical cases.",
+      "Community healthcare outreach campaign organizing and logs."
+    ],
+    "growth": "Progresses from Resident to Junior Consultant, Senior Consultant, Head of Department, and Medical Director.",
+    "future_scope": "High status and constant global demand. The healthcare sector remains completely resilient to technological displacements.",
+    "salary_range": {
+      "entry": "₹8,00,000 - ₹12,00,000",
+      "mid": "₹15,00,000 - ₹30,00,000",
+      "senior": "₹35,00,000 - ₹75,00,000+"
+    }
+  },
+  {
+    "name": "Nurse",
+    "domain": "Healthcare",
+    "description": "Nurses provide direct medical care, emotional support, and advice to patients. They administer medications, monitor vitals, assist doctors, and maintain patient logs to ensure recovery and management.",
+    "required_skills": ["Patient Care", "Vitals Monitoring", "First Aid", "Medication Administration", "Empathy", "Communication", "Teamwork", "Stamina"],
+    "academic_path": ["B.Sc in Nursing", "GNM (General Nursing and Midwifery)", "M.Sc in Nursing"],
+    "learning_roadmap": [
+      "Complete high school science (Physics, Chemistry, Biology).",
+      "Pursue a B.Sc in Nursing (4 years) or GNM diploma.",
+      "Gain hands-on clinical rotation training in diverse hospital departments.",
+      "Register with the state and national nursing council.",
+      "Gain entry-level ward nursing experience.",
+      "Pursue specialization certifications (ICU, pediatrics, operation theater)."
+    ],
+    "certifications": [
+      "Registered Nurse (RN) License",
+      "Advanced Cardiovascular Life Support (ACLS)",
+      "Pediatric Advanced Life Support (PALS)"
+    ],
+    "courses": [
+      "Clinical Nursing Concepts",
+      "Infection Control & Patient Safety modules"
+    ],
+    "projects": [
+      "Simulated patient nursing care plan highlighting clinical protocols.",
+      "Supervised critical care rotation records and logs.",
+      "Wound management and emergency triage clinical simulations."
+    ],
+    "growth": "Moves to Staff Nurse, ICU Specialist Nurse, Nurse Educator, Ward Sister, and Nursing Superintendent.",
+    "future_scope": "Immense global demand, with significant opportunities for migration and specialized hospital practices.",
+    "salary_range": {
+      "entry": "₹2,50,000 - ₹4,00,000",
+      "mid": "₹4,50,000 - ₹8,00,000",
+      "senior": "₹9,00,000 - ₹15,00,000+"
+    }
+  },
+  {
+    "name": "Pharmacist",
+    "domain": "Healthcare",
+    "description": "Pharmacists store, prepare, and dispense medications. They advise patients and healthcare providers on drug dosages, interactions, side effects, and proper storage protocols to ensure safe usage.",
+    "required_skills": ["Pharmacology", "Drug Chemistry", "Inventory Management", "Attention to Detail", "Communication", "Regulatory Compliance"],
+    "academic_path": ["D.Pharm (Diploma)", "B.Pharm (Bachelor)", "M.Pharm / Pharm.D (Doctor of Pharmacy)"],
+    "learning_roadmap": [
+      "Pursue a B.Pharm degree (4 years) covering pharmacology and chemistry.",
+      "Register as a pharmacist with the Pharmacy Council.",
+      "Intern at a retail pharmacy or hospital drug department.",
+      "Understand inventory logistics, prescription safety, and billing operations.",
+      "Optionally pursue M.Pharm for pharmaceutical research or production roles.",
+      "Maintain regulatory compliance for drug storage and sales logs."
+    ],
+    "certifications": [
+      "Registered Pharmacist License Certificate",
+      "Pharmacy Technician Certification (if applicable)"
+    ],
+    "courses": [
+      "Pharmacology and Therapeutics",
+      "Pharmaceutical Chemistry & Quality Control"
+    ],
+    "projects": [
+      "Drug interaction reference guidebook compiling standard combinations.",
+      "Simulated pharmacy store inventory layout and audit tracker.",
+      "Regulatory compliance research report analyzing drug labeling laws."
+    ],
+    "growth": "Progresses to Retail Pharmacist, Hospital Pharmacy Manager, Quality Control Lead, or Drug Inspector.",
+    "future_scope": "Steady demand driven by the aging population, expanding pharmaceutical retail chains, and new drug formulations.",
+    "salary_range": {
+      "entry": "₹2,40,000 - ₹3,60,000",
+      "mid": "₹4,00,000 - ₹7,00,000",
+      "senior": "₹8,00,000 - ₹14,00,000+"
+    }
+  },
+  {
+    "name": "Physiotherapist",
+    "domain": "Healthcare",
+    "description": "Physiotherapists help patients recover physical movement and function after injury, illness, surgery, or aging. They design personalized exercise regimens, massage muscles, and use therapy tools.",
+    "required_skills": ["Anatomy", "Physical Therapy", "Exercise Prescription", "Communication", "Patience", "Physical Stamina", "Therapy Tools"],
+    "academic_path": ["Bachelor of Physiotherapy (BPT - 4.5 years)", "Master of Physiotherapy (MPT)"],
+    "learning_roadmap": [
+      "Enroll in a Bachelor of Physiotherapy (BPT) program.",
+      "Study human anatomy, kinesiology, biomechanics, and clinical therapy.",
+      "Complete a 6-month mandatory clinical internship at a hospital.",
+      "Register with the national physiotherapy board.",
+      "Acquire experience under established therapists or in hospitals.",
+      "Optionally specialize (Sports Medicine, Neurology, Orthopedics)."
+    ],
+    "certifications": [
+      "Registered Physiotherapist License",
+      "Sports Physiotherapy certification",
+      "Manual Therapy (e.g., Mulligan, Maitland) certifications"
+    ],
+    "courses": [
+      "Orthopedic Physical Assessment",
+      "Exercise Physiology and Rehabilitation"
+    ],
+    "projects": [
+      "Full physical rehabilitation regimen design for a post-surgery knee replacement.",
+      "Case study detailing physical therapy outcomes for a chronic back injury.",
+      "Ergonomic workplace layout advisory guide and presentation."
+    ],
+    "growth": "Moves from Assistant Physiotherapist to Senior Physiotherapist, Sports Team Therapist, and Private Clinic Owner.",
+    "future_scope": "Strong, driven by the sports industry growth, lifestyle-induced injuries, and physical wellness awareness.",
+    "salary_range": {
+      "entry": "₹2,80,000 - ₹4,50,000",
+      "mid": "₹5,00,000 - ₹9,00,000",
+      "senior": "₹10,00,000 - ₹18,00,000+"
+    }
+  },
+  {
+    "name": "Entrepreneur",
+    "domain": "Business",
+    "description": "Entrepreneurs conceive, launch, and operate new business ventures. They take on financial risk in the hope of profit, managing strategy, fundraising, product design, marketing, and operations.",
+    "required_skills": ["Risk Management", "Business Strategy", "Fundraising", "Leadership", "Product Innovation", "Negotiation", "Sales", "Resilience"],
+    "academic_path": ["Any degree", "BBA / MBA", "Entrepreneurship Bootcamps"],
+    "learning_roadmap": [
+      "Identify a significant market problem and validate a solution model.",
+      "Create a comprehensive business model canvas and financial plan.",
+      "Build a Minimum Viable Product (MVP) to test market interest.",
+      "Acquire initial users and compile product feedback loops.",
+      "Assemble a core team of co-founders and early-stage hires.",
+      "Pitch to angel investors, venture capitals, or secure boot-strapping channels."
+    ],
+    "certifications": [
+      "Project Management Professional (PMP)",
+      "Lean Six Sigma Green Belt"
+    ],
+    "courses": [
+      "How to Build a Startup by Steve Blank (Udacity)",
+      "Entrepreneurship Specialization by Wharton (Coursera)"
+    ],
+    "projects": [
+      "Pitch deck and business plan presentation for a validated product startup.",
+      "Working prototype/MVP launch with documented early customer registrations.",
+      "A complete financial forecast spreadsheet covering initial operations."
+    ],
+    "growth": "Highly variable. Success progresses to Startup Founder, CEO, Serial Entrepreneur, or Venture Capitalist (VC).",
+    "future_scope": "Dynamic and high risk/reward. The growth of digital tools and accelerators makes startup creation highly accessible.",
+    "salary_range": {
+      "entry": "₹3,00,000 - ₹6,00,000",
+      "mid": "₹12,00,000 - ₹30,00,000",
+      "senior": "₹50,00,000 - ₹5,00,00,000+"
+    }
+  },
+  {
+    "name": "Product Manager",
+    "domain": "Business",
+    "description": "Product Managers guide the design, development, and launch of software or hardware products. They align cross-functional teams (engineering, design, sales) and define the product roadmap.",
+    "required_skills": ["Product Strategy", "Figma", "User Empathy", "Agile", "SQL", "Market Research", "Jira", "A/B Testing", "Communication"],
+    "academic_path": ["B.Tech/B.E.", "BBA / MBA (highly preferred)", "Product Management courses"],
+    "learning_roadmap": [
+      "Develop solid communication, data analysis, and user research skills.",
+      "Understand basic software architecture and design frameworks.",
+      "Learn to draft Product Requirement Documents (PRDs) and user stories.",
+      "Master tools like Jira for task tracking and Figma for layout reviews.",
+      "Learn analytics tools (Mixpanel, Google Analytics) to track product metrics.",
+      "Learn prioritization frameworks (RICE, MoSCoW) to define product features."
+    ],
+    "certifications": [
+      "Product School Product Manager Certificate (PMC)",
+      "AIPMM Certified Product Manager (CPM)",
+      "Pragmatic Institute Product Certification"
+    ],
+    "courses": [
+      "Digital Product Management Specialization (Virginia on Coursera)",
+      "Become a Product Manager by Cole Mercer (Udemy)"
+    ],
+    "projects": [
+      "Detailed Product Requirement Document (PRD) for a new chat app feature.",
+      "A/B test proposal and metrics framework optimizing conversion paths.",
+      "Teardown analysis report of a popular application, recommending UX changes."
+    ],
+    "growth": "Moves to Senior PM, Lead PM, Director of Product, and Chief Product Officer (CPO).",
+    "future_scope": "Excellent. Modern tech organizations require product experts to build user-centered products in competitive fields.",
+    "salary_range": {
+      "entry": "₹8,00,000 - ₹12,00,000",
+      "mid": "₹15,00,000 - ₹28,00,000",
+      "senior": "₹30,00,000 - ₹55,00,000+"
+    }
+  },
+  {
+    "name": "HR Manager",
+    "domain": "Business",
+    "description": "Human Resources Managers oversee recruitment, employee relations, onboarding, performance evaluation, and payroll policies. They align workforce strategies to support organizational goals.",
+    "required_skills": ["Recruitment", "Conflict Resolution", "Communication", "Strategic Planning", "Labour Law", "HRMS Tools", "Employee Engagement"],
+    "academic_path": ["BBA in Human Resources", "B.Com / B.A.", "MBA in HR / Masters in Labour Studies"],
+    "learning_roadmap": [
+      "Study organizational behavior, industrial relations, and management.",
+      "Learn standard recruiting frameworks, screening models, and interviews.",
+      "Master HR Management Systems (HRMS) like Workday or BambooHR.",
+      "Understand labor laws, industrial disputes, and legal compliance.",
+      "Develop performance appraisal systems and feedback models.",
+      "Learn conflict resolution models and employee engagement strategies."
+    ],
+    "certifications": [
+      "SHRM Certified Professional (SHRM-CP)",
+      "PHR (Professional in Human Resources)",
+      "CIPD Qualifications"
+    ],
+    "courses": [
+      "Human Resource Management Specialization (Minnesota on Coursera)",
+      "Recruiting Foundations (LinkedIn Learning)"
+    ],
+    "projects": [
+      "Detailed employee onboarding roadmap and guidebook for a tech firm.",
+      "A performance appraisal matrix and evaluation system proposal.",
+      "Conflict management case study report resolving workplace issues."
+    ],
+    "growth": "Moves from HR Specialist to HR Manager, Director of HR, Chief Human Resources Officer (CHRO).",
+    "future_scope": "Stable. Positive workplace culture and talent acquisition remain critical drivers of corporate success.",
+    "salary_range": {
+      "entry": "₹3,50,000 - ₹5,50,000",
+      "mid": "₹7,00,000 - ₹13,00,000",
+      "senior": "₹15,00,000 - ₹26,00,000+"
+    }
+  },
+  {
+    "name": "Operations Manager",
+    "domain": "Business",
+    "description": "Operations Managers direct daily production, logistics, and resource allocations. They ensure supply chain efficiency, manage budgets, and optimize workflows to maximize productivity.",
+    "required_skills": ["Supply Chain Management", "Process Optimization", "Budgeting", "Lean Methodology", "Six Sigma", "Inventory Control", "Leadership"],
+    "academic_path": ["BBA / B.Com", "B.Tech (Industrial Engineering)", "MBA in Operations/Supply Chain"],
+    "learning_roadmap": [
+      "Understand general business operations, logistics, and capacity plans.",
+      "Master supply chain logistics, vendor relations, and warehouse management.",
+      "Learn process optimization methodologies, specifically Lean and Six Sigma.",
+      "Develop budgeting, resource scheduling, and asset planning skills.",
+      "Understand quality assurance tools and inventory models (JIT, FIFO).",
+      "Learn to monitor operational Key Performance Indicators (KPIs)."
+    ],
+    "certifications": [
+      "Certified in Planning and Inventory Management (CPIM)",
+      "Six Sigma Green/Black Belt Certification",
+      "Project Management Professional (PMP)"
+    ],
+    "courses": [
+      "Operations Management Specialization (Wharton on Coursera)",
+      "Supply Chain Logistics (Rutgers on Coursera)"
+    ],
+    "projects": [
+      "A supply chain audit report optimizing warehouse transport costs.",
+      "Process mapping and streamlining proposal reducing product packaging time.",
+      "Simulated production shift schedule and operational budget sheet."
+    ],
+    "growth": "Moves to Senior Operations Manager, Director of Operations, Chief Operating Officer (COO).",
+    "future_scope": "Excellent. Global operations, e-commerce networks, and modern manufacturing demand continuous efficiency optimization.",
+    "salary_range": {
+      "entry": "₹4,50,000 - ₹7,00,000",
+      "mid": "₹8,50,000 - ₹15,50,000",
+      "senior": "₹17,00,000 - ₹30,00,000+"
+    }
+  },
+  {
+    "name": "Civil Services",
+    "domain": "Government",
+    "description": "Civil Servants manage public administration, policy implementation, law and order, and public welfare schemes. Key positions include administrative officer (IAS), police officer (IPS), and foreign policy officer (IFS).",
+    "required_skills": ["Public Administration", "Policy Formulation", "Leadership", "Decision Making", "General Knowledge", "Ethical Governance", "Communication"],
+    "academic_path": ["Any Bachelor's Degree (Mandatory requirement)", "UPSC Civil Services Examination Prep"],
+    "learning_roadmap": [
+      "Complete a graduation degree in any discipline of interest.",
+      "Study national history, geography, polity, economics, and current affairs.",
+      "Enroll in and prepare for competitive civil services examinations (e.g., UPSC CSE).",
+      "Pass the Preliminary written exam evaluating general studies and aptitude.",
+      "Pass the Mains subjective written exam covering essay, language, and core subjects.",
+      "Clear the personal interview evaluate officer-like personality traits.",
+      "Complete training at the national administrative academy (LBSNAA)."
+    ],
+    "certifications": [
+      "UPSC Selection/Commission Letter",
+      "State Civil Services Commission registration"
+    ],
+    "courses": [
+      "LBSNAA Officer Training courses",
+      "Public Policy and Administration tutorials"
+    ],
+    "projects": [
+      "Detailed research essay analyzing public policy implementation roadblocks.",
+      "Simulated rural development project proposal with budget estimates.",
+      "District level administrative disaster management protocol guide."
+    ],
+    "growth": "Progresses from Assistant Commissioner to District Magistrate, Secretary of Department, and Cabinet Secretary of the Nation.",
+    "future_scope": "Extremely prestigious with high job security, authority, and direct public welfare impact.",
+    "salary_range": {
+      "entry": "₹6,72,000 - ₹8,50,000",
+      "mid": "₹12,00,000 - ₹18,00,000",
+      "senior": "₹24,00,000 - ₹30,00,000+"
+    }
+  },
+  {
+    "name": "Banking Officer",
+    "domain": "Government",
+    "description": "Government Banking Officers (Probationary Officers) manage public sector banking operations, approve retail and commercial loans, coordinate cash transfers, and handle treasury services.",
+    "required_skills": ["Quantitative Aptitude", "Reasoning", "Financial Compliance", "Accounting", "Customer Relations", "Banking Laws", "Attention to Detail"],
+    "academic_path": ["Any Bachelor's Degree", "IBPS PO / SBI PO Examination Prep"],
+    "learning_roadmap": [
+      "Obtain an undergraduate degree in commerce, sciences, or humanities.",
+      "Develop strong analytical math, reasoning, and english verbal aptitude.",
+      "Register and prepare for nationalized bank PO exams (IBPS PO, SBI PO).",
+      "Clear the Preliminary objective test screening applicants.",
+      "Clear the Mains objective and descriptive test evaluating finance and data interpretation.",
+      "Clear the group discussion and personal interview evaluation rounds.",
+      "Complete probationary branch training learning core banking software."
+    ],
+    "certifications": [
+      "JAIIB & CAIIB Certifications (post recruitment)",
+      "IBPS / SBI Selection Letter"
+    ],
+    "courses": [
+      "Banking & Finance Basics",
+      "Retail Credit Risk and Lending modules"
+    ],
+    "projects": [
+      "Simulated loan application proposal evaluating debt-to-income checks.",
+      "Research paper analyzing government banking initiatives (e.g., microfinance).",
+      "Regulatory compliance audit flowchart for branch operations."
+    ],
+    "growth": "Moves from Assistant Manager (PO) to Branch Manager, Chief Manager, General Manager, and Executive Director.",
+    "future_scope": "Highly stable career path in public finance with predictable increments and job security.",
+    "salary_range": {
+      "entry": "₹5,40,000 - ₹6,80,000",
+      "mid": "₹8,00,000 - ₹12,00,000",
+      "senior": "₹15,00,000 - ₹24,00,000+"
+    }
+  },
+  {
+    "name": "SSC Officer",
+    "domain": "Government",
+    "description": "Staff Selection Commission officers work in ministries, departments, and intelligence wings of the government. Roles include Income Tax Inspector, Custom Inspector, Assistant Section Officer, and Sub-Inspector.",
+    "required_skills": ["Tax Compliance", "Investigation", "Audit Checks", "General Aptitude", "National Polity", "Drafting Reports", "Logical Reasoning"],
+    "academic_path": ["Any Bachelor's Degree", "SSC CGL Examination Prep"],
+    "learning_roadmap": [
+      "Obtain a graduate degree in any field.",
+      "Study logic, quantitative aptitude, general english, and current affairs.",
+      "Enroll and register for the Staff Selection Commission Combined Graduate Level (SSC CGL) exam.",
+      "Clear Tier 1 (Objective Multiple Choice exam evaluating math and reasoning).",
+      "Clear Tier 2 (Subject specialization tests and computer proficiency).",
+      "Undergo document verification and physical endurance tests (for field posts).",
+      "Join the allocated national ministry or field office for training."
+    ],
+    "certifications": [
+      "SSC CGL Selection Commission Letter",
+      "Government Department Induction Certificate"
+    ],
+    "courses": [
+      "Departmental Code and Audit procedures",
+      "Government Financial Rules (GFR) tutorials"
+    ],
+    "projects": [
+      "Simulated tax assessment audit profile evaluating asset logs.",
+      "Mock investigation dossier compiling evidence reports.",
+      "A complete research report mapping parliamentary committee functions."
+    ],
+    "growth": "Moves from Inspector / Assistant Section Officer to Superintendent, Assistant Commissioner, and Director.",
+    "future_scope": "Excellent lifestyle balance, secure tenure, and steady career progression through administrative tests.",
+    "salary_range": {
+      "entry": "₹4,80,000 - ₹6,00,000",
+      "mid": "₹8,00,000 - ₹11,00,000",
+      "senior": "₹13,00,000 - ₹18,00,000+"
+    }
+  },
+  {
+    "name": "Defence Officer",
+    "domain": "Government",
+    "description": "Defence Officers serve in the Army, Navy, or Air Force. They lead tactical combat operations, manage logistics, pilot vehicles, and maintain national defense security parameters.",
+    "required_skills": ["Leadership", "Tactical Strategy", "Physical Fitness", "Decision Making", "Mental Resilience", "Survival Skills", "Map Reading", "Discipline"],
+    "academic_path": ["B.Sc/B.Tech (NDAA/CDS eligibility)", "UPSC NDA / CDS Entrance Examination"],
+    "learning_roadmap": [
+      "Complete high school (Physics and Math mandatory for Air Force/Navy).",
+      "Register and appear for NDA (National Defence Academy) or CDS exams.",
+      "Pass the written entrance exam evaluating math, science, and general ability.",
+      "Undergo the intense 5-day Services Selection Board (SSB) interview evaluating officer qualities.",
+      "Pass rigorous military medical fitness reviews.",
+      "Undergo 3-4 years military training (NDA, IMA, INA, or AFA).",
+      "Get commissioned as a Lieutenant (Army), Sub-Lieutenant (Navy), or Flying Officer (Air Force)."
+    ],
+    "certifications": [
+      "Military Commission Document",
+      "Defence Academy Graduation Diploma",
+      "Specialty Operations credentials (e.g., pilot wings, commando badge)"
+    ],
+    "courses": [
+      "Defence Strategy and Military Science curriculum",
+      "Weapon Tactics and Survival modules"
+    ],
+    "projects": [
+      "Tactical mock mission plan covering logistics, operations, and routes.",
+      "Physical training diary maintaining conditioning logs.",
+      "Strategic map-reading and layout analysis presentation."
+    ],
+    "growth": "Command track: Lieutenant to Captain, Major, Colonel, Brigadier, General, and Chief of Staff.",
+    "future_scope": "Highly respected. Unparalleled leadership training, adventure, physical growth, and commitment to national service.",
+    "salary_range": {
+      "entry": "₹8,00,000 - ₹11,00,000",
+      "mid": "₹13,00,000 - ₹20,00,000",
+      "senior": "₹22,00,000 - ₹30,00,000+"
+    }
+  }
+]

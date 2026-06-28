@@ -1,0 +1,9 @@
+# This file contains the different endpoints your bot can use.
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+# tracker_store:
+#    type: sql
+#    dialect: sqlite
+#    db: rasa_tracker.db

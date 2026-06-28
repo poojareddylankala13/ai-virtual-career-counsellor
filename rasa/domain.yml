@@ -1,0 +1,109 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thank_you
+  - ask_career
+  - ask_skills
+  - ask_courses
+  - ask_salary
+  - ask_future_scope
+  - ask_learning_path
+  - ask_certifications
+  - ask_projects
+  - technology_interest
+  - engineering_interest
+  - commerce_interest
+  - arts_interest
+  - healthcare_interest
+  - business_interest
+  - government_jobs
+  - entrepreneurship
+  - higher_studies
+
+slots:
+  user_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  user_age:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  qualification:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  degree:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  academic_year:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  skills:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  interests:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  preferred_domain:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+  career_goal:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  selected_career:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: selected_career
+      - type: from_text
+
+entities:
+  - selected_career
+
+responses:
+  utter_greet:
+    - text: "Hello! I am your AI Virtual Career Counsellor. 🚀 I can help you identify matching career paths, explain required skills, layout study roadmaps, and explore jobs. How can I guide you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Wishing you the absolute best in your career and educational pursuits. Feel free to return if you need more guidance! 👋"
+
+  utter_thank_you:
+    - text: "You're very welcome! It is my pleasure. Let me know if you want to explore salaries, roadmaps, or projects for any career."
+
+  utter_ask_career_prompt:
+    - text: "I can recommend matching careers for you! Please make sure to fill out your profile in the Streamlit Sidebar, or tell me your major interests and skills here."
+
+  utter_default_fallback:
+    - text: "I'm not sure I understood completely. I'm a career bot, so please ask about career paths, skills, study paths, salaries, or certifications!"
+
+actions:
+  - action_recommend_career
+  - action_explain_skills
+  - action_explain_courses
+  - action_explain_salary
+  - action_explain_scope
+  - action_explain_roadmap
+  - action_explain_certifications
+  - action_explain_projects
+  - action_default_fallback

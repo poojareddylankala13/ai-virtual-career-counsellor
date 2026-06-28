@@ -1,0 +1,75 @@
+version: "3.1"
+
+stories:
+  - story: path recommend career directly
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_career
+      - action: action_recommend_career
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - story: path technology interest queries
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: technology_interest
+      - action: action_recommend_career
+      - intent: ask_skills
+      - action: action_explain_skills
+      - intent: ask_salary
+      - action: action_explain_salary
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - story: path commerce interest query details
+    steps:
+      - intent: commerce_interest
+      - action: action_recommend_career
+      - intent: ask_learning_path
+      - action: action_explain_roadmap
+      - intent: ask_courses
+      - action: action_explain_courses
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: path arts creative fields
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: arts_interest
+      - action: action_recommend_career
+      - intent: ask_projects
+      - action: action_explain_projects
+      - intent: ask_certifications
+      - action: action_explain_certifications
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: path healthcare profile search
+    steps:
+      - intent: healthcare_interest
+      - action: action_recommend_career
+      - intent: ask_future_scope
+      - action: action_explain_scope
+      - intent: ask_salary
+      - action: action_explain_salary
+
+  - story: path business entrepreneurship
+    steps:
+      - intent: entrepreneurship
+      - action: action_recommend_career
+      - intent: ask_projects
+      - action: action_explain_projects
+      - intent: ask_learning_path
+      - action: action_explain_roadmap
+
+  - story: path government administrative exams
+    steps:
+      - intent: government_jobs
+      - action: action_recommend_career
+      - intent: ask_skills
+      - action: action_explain_skills
+      - intent: ask_learning_path
+      - action: action_explain_roadmap

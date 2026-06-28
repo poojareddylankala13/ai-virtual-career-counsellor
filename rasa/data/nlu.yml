@@ -1,0 +1,200 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+      - hi bot
+      - hello counsellor
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - talk to you later
+      - bye bye
+      - exit
+      - quit
+
+  - intent: affirm
+    examples: |
+      - yes
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - absolutely
+      - positive
+      - yeah
+
+  - intent: deny
+    examples: |
+      - no
+      - never
+      - I don't think so
+      - don't do that
+      - disagree
+      - not at all
+      - no way
+
+  - intent: thank_you
+    examples: |
+      - thanks
+      - thank you
+      - thank you very much
+      - highly appreciated
+      - thanks a lot
+      - great, thanks
+      - thank you bot
+
+  - intent: ask_career
+    examples: |
+      - what career options do I have?
+      - recommend a career for me
+      - what should I do in my career?
+      - suggest some career paths
+      - tell me my matches
+      - help me choose a profession
+      - show my career options
+      - give me career advice
+
+  - intent: ask_skills
+    examples: |
+      - what skills do I need?
+      - what are the required skills?
+      - which skills should I learn?
+      - what qualifications are needed?
+      - tell me the skills required for this job
+      - do I need to learn anything special?
+
+  - intent: ask_courses
+    examples: |
+      - are there any courses you recommend?
+      - recommend some online courses
+      - what courses should I take?
+      - suggest MOOCs for learning this
+      - list of classes to join
+      - best courses for my career
+
+  - intent: ask_salary
+    examples: |
+      - what is the average salary?
+      - how much does this job pay?
+      - what is the salary range?
+      - is it a high paying career?
+      - how much can I earn as an engineer?
+      - what are the entry level wages?
+
+  - intent: ask_future_scope
+    examples: |
+      - what is the future scope?
+      - is this career growing?
+      - will this job exist in 10 years?
+      - what are the growth opportunities?
+      - what is the market demand for this?
+      - what is the industry outlook?
+
+  - intent: ask_learning_path
+    examples: |
+      - show me the learning roadmap
+      - how do I start learning?
+      - what is the step by step path?
+      - how to become this?
+      - show the study path
+      - give me a learning roadmap
+
+  - intent: ask_certifications
+    examples: |
+      - what certifications are useful?
+      - should I get certified?
+      - list standard certifications for this
+      - best certifications to add to my resume
+      - industry recognized credentials
+
+  - intent: ask_projects
+    examples: |
+      - what projects should I build?
+      - suggest some portfolio projects
+      - give me project ideas
+      - what kind of practical experience is good?
+      - show me sample projects
+
+  - intent: technology_interest
+    examples: |
+      - I am interested in technology
+      - I want to code
+      - I like software and computers
+      - computer science is my passion
+      - I love writing programs
+      - tech is my target domain
+
+  - intent: engineering_interest
+    examples: |
+      - I want to study engineering
+      - I like building systems and hardware
+      - mechanical, electrical, or software engineering
+      - I want to be an engineer
+      - engineering is my field
+
+  - intent: commerce_interest
+    examples: |
+      - I am interested in finance and commerce
+      - I want to study accounts
+      - I like business trade and commerce subjects
+      - accounting and taxes interest me
+      - money markets and investments
+
+  - intent: arts_interest
+    examples: |
+      - I am interested in arts and design
+      - I like creative writing and painting
+      - graphic design, sketching, animation
+      - UI/UX design and drawing
+      - I am a creative person
+
+  - intent: healthcare_interest
+    examples: |
+      - I want to go into healthcare
+      - I want to help patients and cure diseases
+      - medicine, nursing, pharmacy
+      - biology and medical sciences
+      - I want to become a doctor or nurse
+
+  - intent: business_interest
+    examples: |
+      - I am interested in business management
+      - I want to manage teams and operations
+      - product management and operations management
+      - HR management and brand marketing
+      - I want an MBA
+
+  - intent: government_jobs
+    examples: |
+      - I want a government job
+      - preparing for civil services
+      - SSC exams and government banking
+      - IAS, IPS, or public sector jobs
+      - I want to serve the state
+
+  - intent: entrepreneurship
+    examples: |
+      - I want to start my own business
+      - I want to be an entrepreneur
+      - launch a startup
+      - I have a business idea
+      - start my own company
+      - self employed business founder
+
+  - intent: higher_studies
+    examples: |
+      - I want to pursue higher studies
+      - should I do masters?
+      - post graduation options
+      - PhD or further specialization
+      - I want to study more after my bachelor degree

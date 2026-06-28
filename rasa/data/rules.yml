@@ -1,0 +1,22 @@
+version: "3.1"
+
+rules:
+  - rule: Say hello whenever user greets
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Say goodbye whenever user bids farewell
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Express gratitude on thank you
+    steps:
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - rule: Handle fallback elegantly
+    steps:
+      - intent: nlu_fallback
+      - action: action_default_fallback
