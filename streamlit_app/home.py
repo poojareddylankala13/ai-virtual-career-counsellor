@@ -56,7 +56,7 @@ def render_home():
     # Elegant Hero Banner
     st.markdown("""
     <div class="header-container">
-        <div class="header-title">🎓 ApexPath AI Virtual Career Counsellor</div>
+        <div class="header-title">🎓 AI Virtual Career Counsellor</div>
         <div class="header-subtitle">Navigate your academic and professional future with AI-guided recommendations, custom study roadmaps, and natural language career support.</div>
     </div>
     """, unsafe_allow_html=True)

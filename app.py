@@ -182,8 +182,8 @@ else:
     # Sidebar Navigation brand logo
     st.sidebar.markdown("""
     <div class="sidebar-brand">
-        <h2 style="color: #60A5FA; margin-bottom: 0; font-weight:700;">ApexPath AI</h2>
-        <p style="color: #94A3B8; font-size: 0.85rem;">Virtual Career Counsellor</p>
+        <h2 style="color: #60A5FA; margin-bottom: 0; font-weight:700; font-size: 1.4rem;">AI Virtual</h2>
+        <p style="color: #94A3B8; font-size: 0.85rem;">Career Counsellor</p>
     </div>
     """, unsafe_allow_html=True)
 

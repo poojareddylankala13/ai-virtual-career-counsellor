@@ -12,7 +12,7 @@ def build_pdf_roadmap_bytes(career_name: str, roadmap_steps: list, certs: list, 
         from fpdf import FPDF
     except ImportError:
         # Fallback text format if fpdf is not installed
-        report = f"ApexPath AI Study Plan: {career_name}\n\n"
+        report = f"AI Virtual Career Counsellor Study Plan: {career_name}\n\n"
         report += "MILESTONES:\n"
         for i, s in enumerate(roadmap_steps, 1):
             report += f"{i}. {s}\n"
@@ -25,7 +25,7 @@ def build_pdf_roadmap_bytes(career_name: str, roadmap_steps: list, certs: list, 
         def header(self):
             self.set_font("helvetica", "B", 16)
             self.set_text_color(59, 130, 246)  # Accent primary blue
-            self.cell(0, 10, "ApexPath AI Virtual Career Counsellor", 0, 1, "C")
+            self.cell(0, 10, "AI Virtual Career Counsellor", 0, 1, "C")
             self.set_font("helvetica", "I", 10)
             self.set_text_color(148, 163, 184)
             self.cell(0, 10, "Your Personalized Professional Study Roadmap", 0, 1, "C")

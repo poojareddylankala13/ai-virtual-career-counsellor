@@ -230,7 +230,7 @@ def render_resume_analyzer():
         with tab_report:
             # Generate Text Report
             report_text = f"==========================================\n"
-            report_text += f"RESUME ATS ANALYSIS REPORT - APEXPATH AI\n"
+            report_text += f"RESUME ATS ANALYSIS REPORT - AI VIRTUAL CAREER COUNSELLOR\n"
             report_text += f"==========================================\n"
             report_text += f"Target Career: {target_career_name}\n"
             report_text += f"File Analyzed: {filename}\n\n"
@@ -242,7 +242,7 @@ def render_resume_analyzer():
             report_text += f"\n--- IMPROVEMENT SUGGESTIONS ---\n"
             for sug in suggestions:
                 report_text += f"- {sug}\n"
-            report_text += f"\nGenerated via ApexPath AI Virtual Career Counsellor."
+            report_text += f"\nGenerated via AI Virtual Career Counsellor."
 
             st.text_area("Analysis Report Summary", value=report_text, height=250)
             

@@ -1,4 +1,4 @@
-# ApexPath AI | Deployment & Hosting Guide
+# AI Virtual Career Counsellor | Deployment & Hosting Guide
 
 This guide details steps to deploy and run the AI Virtual Career Counsellor. It covers local operations, multi-server startup processes, and cloud hosting guidelines.
 

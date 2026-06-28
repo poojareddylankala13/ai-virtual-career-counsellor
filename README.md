@@ -1,6 +1,6 @@
-# ApexPath AI | Virtual Career Counsellor
+# AI Virtual Career Counsellor
 
-ApexPath AI is a production-ready, NLP-powered Career Counselling web application designed to guide students and professionals in finding their ideal career trajectories. By combining a **Rasa 3.x conversational chatbot**, **NLTK-based text preprocessing**, and a **custom Career Recommendation Engine**, it creates a modern, personalized guidance experience.
+AI Virtual Career Counsellor is a production-ready, NLP-powered Career Counselling web application designed to guide students and professionals in finding their ideal career trajectories. By combining a **Rasa 3.x conversational chatbot**, **NLTK-based text preprocessing**, and a **custom Career Recommendation Engine**, it creates a modern, personalized guidance experience.
 
 ---
 

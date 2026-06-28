@@ -19,7 +19,7 @@ def render_auth_pages():
     # Centered container for form styling
     st.markdown("""
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h1 style="color: #60A5FA; font-weight:700; margin-bottom:0.2rem;">ApexPath AI</h1>
+        <h1 style="color: #60A5FA; font-weight:700; margin-bottom:0.2rem;">AI Virtual Career Counsellor</h1>
         <p style="color: #94A3B8; font-size:1rem;">Your Intelligent Path to Professional Success</p>
     </div>
     """, unsafe_allow_html=True)
@@ -83,7 +83,7 @@ def render_signup():
     st.markdown("""
     <div class="career-card" style="max-width: 450px; margin: 0 auto; padding: 2rem;">
         <h3 style="margin-top:0; color: #60A5FA; text-align: center;">Register Account</h3>
-        <p style="color:#94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Join ApexPath AI to start planning your career pathway</p>
+        <p style="color:#94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Join AI Virtual Career Counsellor to start planning your career pathway</p>
     </div>
     """, unsafe_allow_html=True)
 
