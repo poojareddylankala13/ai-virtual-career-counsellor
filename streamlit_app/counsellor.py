@@ -151,7 +151,7 @@ def render_counsellor():
 
     st.markdown("""
     <div class="header-container">
-        <div class="header-title">🤖 AI Career Counsellor Chat</div>
+        <div class="header-title">🤖 AI Virtual Career Counsellor Chat</div>
         <div class="header-subtitle">Discuss qualifications, seek career advice, ask for roadmaps, projects, or salaries in real-time.</div>
     </div>
     """, unsafe_allow_html=True)
@@ -189,7 +189,7 @@ def render_counsellor():
         # List existing sessions as buttons
         for s in sessions:
             is_active = s["session_id"] == active_session_id
-            bg_color = "background-color: rgba(59, 130, 246, 0.08);" if is_active else ""
+            bg_color = "background-color: rgba(124, 58, 237, 0.12);" if is_active else ""
             
             col_b, col_del = st.columns([8, 2])
             with col_b:

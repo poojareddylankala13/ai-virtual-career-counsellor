@@ -19,8 +19,8 @@ def render_auth_pages():
     # Centered container for form styling
     st.markdown("""
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h1 style="color: #60A5FA; font-weight:700; margin-bottom:0.2rem;">AI Virtual Career Counsellor</h1>
-        <p style="color: #94A3B8; font-size:1rem;">Your Intelligent Path to Professional Success</p>
+        <h1 style="color: #C084FC; font-weight:700; margin-bottom:0.2rem;">AI Virtual Career Counsellor</h1>
+        <p style="color: #B3B3C5; font-size:1rem;">Your AI-powered companion for personalized career guidance, resume analysis, skill development, and interview preparation.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -37,8 +37,8 @@ def render_login():
     """Renders the Login form."""
     st.markdown("""
     <div class="career-card" style="max-width: 450px; margin: 0 auto; padding: 2rem;">
-        <h3 style="margin-top:0; color: #60A5FA; text-align: center;">Welcome Back</h3>
-        <p style="color:#94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Log in to access your counsellor chat and roadmaps</p>
+        <h3 style="margin-top:0; color: #C084FC; text-align: center;">Welcome Back</h3>
+        <p style="color:#B3B3C5; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Log in to access your counsellor chat and roadmaps</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -82,8 +82,8 @@ def render_signup():
     """Renders the Sign Up form."""
     st.markdown("""
     <div class="career-card" style="max-width: 450px; margin: 0 auto; padding: 2rem;">
-        <h3 style="margin-top:0; color: #60A5FA; text-align: center;">Register Account</h3>
-        <p style="color:#94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Join AI Virtual Career Counsellor to start planning your career pathway</p>
+        <h3 style="margin-top:0; color: #C084FC; text-align: center;">Register Account</h3>
+        <p style="color:#B3B3C5; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Join AI Virtual Career Counsellor to start planning your career pathway</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -124,8 +124,8 @@ def render_forgot_password():
     """Renders the Forgot Password form."""
     st.markdown("""
     <div class="career-card" style="max-width: 450px; margin: 0 auto; padding: 2rem;">
-        <h3 style="margin-top:0; color: #60A5FA; text-align: center;">Reset Password</h3>
-        <p style="color:#94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Enter email to reset password settings</p>
+        <h3 style="margin-top:0; color: #C084FC; text-align: center;">Reset Password</h3>
+        <p style="color:#B3B3C5; text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Enter email to reset password settings</p>
     </div>
     """, unsafe_allow_html=True)
 

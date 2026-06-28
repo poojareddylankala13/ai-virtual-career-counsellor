@@ -51,8 +51,8 @@ def render_explorer():
             st.markdown(f"""
             <div class="career-card" style="margin-bottom: 0.5rem;">
                 <span class="badge" style="float: right;">{c['domain']}</span>
-                <h3 style="margin: 0; color: #60A5FA;">{c['name']}</h3>
-                <p style="margin-top: 0.5rem; margin-bottom: 0; font-size: 0.9rem; color: #94A3B8;">{c['description'][:150]}...</p>
+                <h3 style="margin: 0; color: #C084FC;">{c['name']}</h3>
+                <p style="margin-top: 0.5rem; margin-bottom: 0; font-size: 0.9rem; color: #B3B3C5;">{c['description'][:150]}...</p>
             </div>
             """, unsafe_allow_html=True)
             

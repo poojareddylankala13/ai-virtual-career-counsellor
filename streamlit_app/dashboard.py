@@ -21,7 +21,7 @@ def get_avatar_html(photo_bytes) -> str:
             src = "https://api.dicebear.com/7.x/bottts/svg?seed=counsellor"
     else:
         src = "https://api.dicebear.com/7.x/bottts/svg?seed=counsellor"
-    return f'<img src="{src}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #3B82F6; box-shadow: 0 4px 10px rgba(0,0,0,0.25);">'
+    return f'<img src="{src}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #7C3AED; box-shadow: 0 4px 10px rgba(124,58,237,0.25);">'
 
 
 def render_dashboard():
@@ -34,6 +34,13 @@ def render_dashboard():
     name = profile.get("name", "User")
     photo = profile.get("profile_photo")
 
+    st.markdown("""
+    <div class="header-container">
+        <div class="header-title">📊 AI Virtual Career Counsellor Dashboard</div>
+        <div class="header-subtitle">Your personalized portal for career development, study plans, and resume matching.</div>
+    </div>
+    """, unsafe_allow_html=True)
+
     # Welcome Header Panel
     col_av, col_wel = st.columns([1, 8])
     with col_av:
@@ -41,8 +48,8 @@ def render_dashboard():
     with col_wel:
         st.markdown(f"""
         <div style="margin-top: 0.5rem;">
-            <h2 style="color: #60A5FA; margin-bottom: 0.2rem; font-weight:700;">Welcome back, {name}! 🚀</h2>
-            <p style="color: #94A3B8; font-size: 1rem; margin-top:0;">Explore your career milestones, continue roadmaps, or consult your AI guide.</p>
+            <h2 style="color: #C084FC; margin-bottom: 0.2rem; font-weight:700;">Welcome back, {name}! 🚀</h2>
+            <p style="color: #B3B3C5; font-size: 1rem; margin-top:0;">Explore your career milestones, continue roadmaps, or consult your AI guide.</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -86,8 +93,8 @@ def render_dashboard():
     with m2:
         st.markdown(f"""
         <div class="career-card" style="text-align: center; padding: 1rem; height: 130px; overflow: hidden; text-overflow: ellipsis;">
-            <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase;">Recommended</div>
-            <div style="font-size: 0.95rem; font-weight: 700; color: #60A5FA; margin-top: 0.8rem; line-height: 1.2;">{top_career}</div>
+            <div style="font-size: 0.75rem; color: #B3B3C5; text-transform: uppercase;">Recommended</div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: #C084FC; margin-top: 0.8rem; line-height: 1.2;">{top_career}</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -102,8 +109,8 @@ def render_dashboard():
     with m4:
         st.markdown(f"""
         <div class="career-card" style="text-align: center; padding: 1rem; height: 130px;">
-            <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase;">Tasks Done</div>
-            <div style="font-size: 1.6rem; font-weight: 700; color: #60A5FA; margin-top: 0.5rem;">{completed_lessons}</div>
+            <div style="font-size: 0.75rem; color: #B3B3C5; text-transform: uppercase;">Tasks Done</div>
+            <div style="font-size: 1.6rem; font-weight: 700; color: #C084FC; margin-top: 0.5rem;">{completed_lessons}</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -143,7 +150,7 @@ def render_dashboard():
                     st.markdown(f"""
                     <div style="margin-bottom: 1.2rem;">
                         <span style="font-weight: 600; color:#E2E8F0;">{career_name}</span> 
-                        <span style="float: right; color: #60A5FA; font-size: 0.85rem;">{percent}% Complete ({done}/{total_steps} steps)</span>
+                        <span style="float: right; color: #C084FC; font-size: 0.85rem;">{percent}% Complete ({done}/{total_steps} steps)</span>
                     </div>
                     """, unsafe_allow_html=True)
                     st.progress(done / max(1, total_steps))
@@ -157,8 +164,8 @@ def render_dashboard():
             for s in sessions[:3]:  # Top 3 sessions
                 st.markdown(f"""
                 <div class="career-card" style="padding: 1rem; margin-bottom: 0.8rem;">
-                    <span style="color: #94A3B8; font-size: 0.8rem; float:right;">Created: {s['created_at'][:10]}</span>
-                    <h4 style="margin: 0; color: #60A5FA;">💬 {s['title']}</h4>
+                    <span style="color: #B3B3C5; font-size: 0.8rem; float:right;">Created: {s['created_at'][:10]}</span>
+                    <h4 style="margin: 0; color: #C084FC;">💬 {s['title']}</h4>
                 </div>
                 """, unsafe_allow_html=True)
         else:
@@ -172,8 +179,8 @@ def render_dashboard():
                 st.markdown(f"""
                 <div class="career-card" style="padding: 1rem; margin-bottom: 0.8rem;">
                     <span class="score-badge" style="font-size: 0.8rem;">{r['match_percentage']}%</span>
-                    <h4 style="margin: 0; color: #60A5FA;">{r['name']}</h4>
-                    <p style="margin: 0.3rem 0 0 0; font-size: 0.8rem; color: #94A3B8;">Domain: {r['domain']}</p>
+                    <h4 style="margin: 0; color: #C084FC;">{r['name']}</h4>
+                    <p style="margin: 0.3rem 0 0 0; font-size: 0.8rem; color: #B3B3C5;">Domain: {r['domain']}</p>
                 </div>
                 """, unsafe_allow_html=True)
         else:
@@ -208,7 +215,7 @@ def render_dashboard():
                 x="Domain",
                 y="Careers Count",
                 color="Domain",
-                color_discrete_sequence=px.colors.qualitative.Dark24,
+                color_discrete_sequence=["#7C3AED", "#A855F7", "#C084FC", "#9333EA", "#5B21B6", "#D8B4FE"],
                 template="plotly_dark"
             )
             fig1.update_layout(
@@ -223,9 +230,9 @@ def render_dashboard():
             st.markdown("### Salary Benchmarks (INR)")
             df_salary = df.sort_values(by="Mid Salary", ascending=False).head(5)
             fig2 = go.Figure()
-            fig2.add_trace(go.Bar(x=df_salary["Name"], y=df_salary["Entry Salary"], name="Entry", marker_color="#3B82F6"))
-            fig2.add_trace(go.Bar(x=df_salary["Name"], y=df_salary["Mid Salary"], name="Mid", marker_color="#10B981"))
-            fig2.add_trace(go.Bar(x=df_salary["Name"], y=df_salary["Senior Salary"], name="Senior", marker_color="#F59E0B"))
+            fig2.add_trace(go.Bar(x=df_salary["Name"], y=df_salary["Entry Salary"], name="Entry", marker_color="#7C3AED"))
+            fig2.add_trace(go.Bar(x=df_salary["Name"], y=df_salary["Mid Salary"], name="Mid", marker_color="#A855F7"))
+            fig2.add_trace(go.Bar(x=df_salary["Name"], y=df_salary["Senior Salary"], name="Senior", marker_color="#C084FC"))
             fig2.update_layout(
                 barmode='group',
                 template="plotly_dark",

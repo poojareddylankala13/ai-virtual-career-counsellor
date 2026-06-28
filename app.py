@@ -31,11 +31,17 @@ st.markdown(f"""
         font-family: 'Outfit', sans-serif;
     }}
     
+    .stApp {{
+        background-color: #0B0B0F !important;
+        color: #FFFFFF !important;
+    }}
+    
     .header-container {{
-        background: linear-gradient(135deg, {APP_THEME_COLOR} 0%, #1E293B 100%);
+        background: linear-gradient(135deg, #15151E 0%, #0B0B0F 100%);
         padding: 2.5rem;
         border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid #2A2A35;
+        box-shadow: 0 4px 30px rgba(124, 58, 237, 0.08);
         color: white;
         margin-bottom: 2rem;
         position: relative;
@@ -49,7 +55,7 @@ st.markdown(f"""
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 60%);
         pointer-events: none;
     }}
     
@@ -57,42 +63,41 @@ st.markdown(f"""
         font-size: 2.8rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
-        background: linear-gradient(to right, #60A5FA, #3B82F6, #93C5FD);
+        background: linear-gradient(to right, #C084FC, #7C3AED, #A855F7);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }}
     
     .header-subtitle {{
         font-size: 1.2rem;
-        color: #94A3B8;
+        color: #B3B3C5;
         font-weight: 400;
     }}
     
     .career-card {{
-        background: rgba(30, 41, 59, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: #15151E;
+        border: 1px solid #2A2A35;
         border-radius: 12px;
         padding: 1.8rem;
         margin-bottom: 1.5rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }}
     
     .career-card:hover {{
         transform: translateY(-4px);
-        border-color: rgba(59, 130, 246, 0.3);
-        box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(59, 130, 246, 0.05);
+        border-color: #7C3AED;
+        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12);
     }}
     
     .badge {{
-        background: rgba(59, 130, 246, 0.15);
-        color: #60A5FA;
+        background: rgba(124, 58, 237, 0.1);
+        color: #C084FC;
         padding: 0.2rem 0.6rem;
         border-radius: 6px;
         font-size: 0.8rem;
         font-weight: 600;
-        border: 1px solid rgba(59, 130, 246, 0.2);
+        border: 1px solid rgba(124, 58, 237, 0.25);
         display: inline-block;
         margin-bottom: 0.5rem;
     }}
@@ -101,64 +106,66 @@ st.markdown(f"""
         float: right;
         font-size: 1rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
         color: white;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         border: none;
+        box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2);
     }}
     
     .sidebar-brand {{
         text-align: center;
         padding: 1rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #2A2A35;
         margin-bottom: 1.5rem;
+    }}
+
+    /* Target all Streamlit standard buttons for premium purple gradients */
+    div.stButton > button {{
+        background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%) !important;
+        color: #FFFFFF !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.5rem 1.2rem !important;
+        font-weight: 600 !important;
+        box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15) !important;
+        transition: all 0.2s ease !important;
+        height: auto !important;
+    }}
+    
+    div.stButton > button:hover {{
+        background: linear-gradient(135deg, #9333EA 0%, #A855F7 100%) !important;
+        box-shadow: 0 6px 18px rgba(124, 58, 237, 0.3) !important;
+        transform: translateY(-2px) !important;
+        border: none !important;
+    }}
+    
+    div.stButton > button:active {{
+        transform: translateY(1px) !important;
+    }}
+
+    /* Custom scrollbar styles */
+    ::-webkit-scrollbar {{
+        width: 8px;
+    }}
+    ::-webkit-scrollbar-track {{
+        background: #0B0B0F;
+    }}
+    ::-webkit-scrollbar-thumb {{
+        background: #2A2A35;
+        border-radius: 4px;
+    }}
+    ::-webkit-scrollbar-thumb:hover {{
+        background: #7C3AED;
+    }}
+    
+    /* Progress Bars styling */
+    div.stProgress > div > div > div > div {{
+        background-color: #7C3AED !important;
     }}
 </style>
 """, unsafe_allow_html=True)
-
-# 2. Light Theme Overrides (Inject if selected)
-if st.session_state["theme"] == "light":
-    st.markdown("""
-    <style>
-        .stApp {
-            background-color: #F8FAFC !important;
-            color: #0F172A !important;
-        }
-        .career-card {
-            background: #FFFFFF !important;
-            border: 1px solid #E2E8F0 !important;
-            color: #0F172A !important;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
-        }
-        .career-card:hover {
-            border-color: #3B82F6 !important;
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.05) !important;
-        }
-        h1, h2, h3, h4, h5, h6, p, li, span, label, div {
-            color: #0F172A !important;
-        }
-        .stMarkdown p, .stMarkdown li, .stMarkdown span {
-            color: #1E293B !important;
-        }
-        .badge {
-            background: rgba(59, 130, 246, 0.08) !important;
-            color: #2563EB !important;
-            border: 1px solid rgba(59, 130, 246, 0.15) !important;
-        }
-        .sidebar-brand h2 {
-            color: #2563EB !important;
-        }
-        .header-title {
-            background: linear-gradient(to right, #2563EB, #1D4ED8, #3B82F6) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-        }
-        .header-subtitle {
-            color: #F1F5F9 !important;
-        }
-    </style>
-    """, unsafe_allow_html=True)
 
 # 3. Route Access Protections (Block page rendering if unauthenticated)
 if "user_email" not in st.session_state or not st.session_state["user_email"]:
@@ -182,8 +189,8 @@ else:
     # Sidebar Navigation brand logo
     st.sidebar.markdown("""
     <div class="sidebar-brand">
-        <h2 style="color: #60A5FA; margin-bottom: 0; font-weight:700; font-size: 1.4rem;">AI Virtual</h2>
-        <p style="color: #94A3B8; font-size: 0.85rem;">Career Counsellor</p>
+        <h2 style="color: #C084FC; margin-bottom: 0; font-weight:700; font-size: 1.4rem;">AI Virtual</h2>
+        <p style="color: #B3B3C5; font-size: 0.85rem;">Career Counsellor</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -207,6 +214,7 @@ else:
 
     st.sidebar.markdown("---")
     st.sidebar.caption(f"Logged in as: `{st.session_state['user_email']}`")
+    st.sidebar.markdown("<div style='text-align: center; color: #B3B3C5; font-size: 0.75rem; margin-top: 1rem;'>© 2026 AI Virtual Career Counsellor</div>", unsafe_allow_html=True)
 
     # Routing redirection handlers
     if page == "🏠 Dashboard":

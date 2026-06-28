@@ -16,7 +16,7 @@ RASA_WEBHOOK_URL = f"{RASA_SERVER_URL}/webhooks/rest/webhook"
 # Streamlit App Styling & Aesthetics
 APP_TITLE = "AI Virtual Career Counsellor"
 APP_THEME_COLOR = "#0F172A"  # Deep slate grey
-ACCENT_COLOR = "#3B82F6"      # Modern primary blue
+ACCENT_COLOR = "#7C3AED"      # Premium primary purple
 
 # Ensure necessary folders exist
 os.makedirs(DATA_DIR, exist_ok=True)

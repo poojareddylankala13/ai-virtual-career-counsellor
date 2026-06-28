@@ -16,20 +16,16 @@ def render_settings():
     </div>
     """, unsafe_allow_html=True)
 
-    # 1. Visual Theme Selection & Notifications
+    # 1. Preferences & Notifications
     st.markdown("### 🎨 Preferences")
     
-    current_theme = profile.get("theme", "dark")
-    theme_opt = st.radio("Application Appearance Mode:", ["Dark Theme", "Light Theme"], index=0 if current_theme == "dark" else 1)
-    new_theme = "dark" if theme_opt == "Dark Theme" else "light"
-
     current_notif = profile.get("notifications", 1)
     notif_opt = st.toggle("Enable system alerts and notifications", value=bool(current_notif))
     new_notif = 1 if notif_opt else 0
 
     if st.button("Apply Preferences Settings", key="apply_pref_btn"):
-        db.update_user_settings(user_email, new_theme, new_notif)
-        st.session_state["theme"] = new_theme
+        db.update_user_settings(user_email, "dark", new_notif)
+        st.session_state["theme"] = "dark"
         st.success("App preferences updated!")
         st.rerun()
 
@@ -87,3 +83,5 @@ def render_settings():
     # 4. Standard Logout Button
     if st.button("Log Out of Session", key="settings_logout_btn"):
         handle_logout()
+
+    st.markdown("<br><br><div style='text-align: center; color: #B3B3C5; font-size: 0.85rem;'>© 2026 AI Virtual Career Counsellor</div>", unsafe_allow_html=True)

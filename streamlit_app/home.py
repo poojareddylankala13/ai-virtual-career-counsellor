@@ -67,24 +67,24 @@ def render_home():
     with col1:
         st.markdown("""
         <div class="career-card" style="height: 250px;">
-            <h4 style="color:#60A5FA; margin-top:0;">🤖 Conversational AI</h4>
-            <p style="color:#94A3B8; font-size:0.9rem;">Chat with our Rasa-powered virtual counsellor to inquire about specific job requirements, study roadmaps, portfolio projects, and salary figures in plain language.</p>
+            <h4 style="color:#C084FC; margin-top:0;">🤖 Conversational AI</h4>
+            <p style="color:#B3B3C5; font-size:0.9rem;">Chat with our Rasa-powered virtual counsellor to inquire about specific job requirements, study roadmaps, portfolio projects, and salary figures in plain language.</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col2:
         st.markdown("""
         <div class="career-card" style="height: 250px;">
-            <h4 style="color:#60A5FA; margin-top:0;">🧠 Hybrid Match Engine</h4>
-            <p style="color:#94A3B8; font-size:0.9rem;">Fill out a structured profile with your skills, qualification level, and interests to receive instantaneous percentage-based career matching recommendations.</p>
+            <h4 style="color:#C084FC; margin-top:0;">🧠 Hybrid Match Engine</h4>
+            <p style="color:#B3B3C5; font-size:0.9rem;">Fill out a structured profile with your skills, qualification level, and interests to receive instantaneous percentage-based career matching recommendations.</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col3:
         st.markdown("""
         <div class="career-card" style="height: 250px;">
-            <h4 style="color:#60A5FA; margin-top:0;">🗺️ Curated Study Paths</h4>
-            <p style="color:#94A3B8; font-size:0.9rem;">Every recommendation comes with a step-by-step roadmap, recommended online courses (MOOCs), recognized certifications, and practical portfolio project ideas.</p>
+            <h4 style="color:#C084FC; margin-top:0;">🗺️ Curated Study Paths</h4>
+            <p style="color:#B3B3C5; font-size:0.9rem;">Every recommendation comes with a step-by-step roadmap, recommended online courses (MOOCs), recognized certifications, and practical portfolio project ideas.</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -105,7 +105,7 @@ def render_home():
                 x="Domain",
                 y="Careers Count",
                 color="Domain",
-                color_discrete_sequence=px.colors.qualitative.Dark24,
+                color_discrete_sequence=["#7C3AED", "#A855F7", "#C084FC", "#9333EA", "#5B21B6", "#D8B4FE"],
                 template="plotly_dark"
             )
             fig1.update_layout(
@@ -126,19 +126,19 @@ def render_home():
                 x=df_salary["Name"],
                 y=df_salary["Entry Salary"],
                 name="Entry Level",
-                marker_color="#3B82F6"
+                marker_color="#7C3AED"
             ))
             fig2.add_trace(go.Bar(
                 x=df_salary["Name"],
                 y=df_salary["Mid Salary"],
                 name="Mid Level",
-                marker_color="#10B981"
+                marker_color="#A855F7"
             ))
             fig2.add_trace(go.Bar(
                 x=df_salary["Name"],
                 y=df_salary["Senior Salary"],
                 name="Senior Level",
-                marker_color="#F59E0B"
+                marker_color="#C084FC"
             ))
 
             fig2.update_layout(

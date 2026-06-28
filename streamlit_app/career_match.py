@@ -98,10 +98,10 @@ def render_career_match():
                 is_saved = rec["name"] in saved_roadmaps
                 
                 st.markdown(f"""
-                <div class="career-card" style="border-left: 5px solid #3B82F6;">
+                <div class="career-card" style="border-left: 5px solid #7C3AED;">
                     <span class="score-badge">{rec['match_percentage']}% Match</span>
                     <span class="badge">{rec['domain']}</span>
-                    <h3 style="margin: 0.5rem 0; color:#60A5FA;">{rec['name']}</h3>
+                    <h3 style="margin: 0.5rem 0; color:#C084FC;">{rec['name']}</h3>
                     <p style="font-size:0.9rem; color:#E2E8F0; margin-bottom:1rem;">{rec['reason']}</p>
                 </div>
                 """, unsafe_allow_html=True)
