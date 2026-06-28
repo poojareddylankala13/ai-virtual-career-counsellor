@@ -1,8 +1,8 @@
 import streamlit as st
 import uuid
-import os
-from config import APP_TITLE, APP_THEME_COLOR, ACCENT_COLOR
+from config import APP_TITLE, APP_THEME_COLOR
 from utils.db_helper import DBHelper
+from streamlit_app.auth import render_auth_pages, handle_logout
 
 # Set page config as the very first Streamlit command
 st.set_page_config(
@@ -19,39 +19,18 @@ db = DBHelper()
 if "session_id" not in st.session_state:
     st.session_state["session_id"] = str(uuid.uuid4())
 
-session_id = st.session_state["session_id"]
+if "theme" not in st.session_state:
+    st.session_state["theme"] = "dark"
 
-if "user_profile" not in st.session_state:
-    # Try to load existing profile from DB
-    profile = db.get_profile(session_id)
-    if not profile:
-        profile = {
-            "name": "",
-            "age": 18,
-            "highest_qualification": "High School",
-            "current_degree": "",
-            "academic_year": "1st Year",
-            "skills": "",
-            "interests": "",
-            "preferred_domain": "Technology",
-            "career_goal": ""
-        }
-    st.session_state["user_profile"] = profile
-
-if "recommendations" not in st.session_state:
-    st.session_state["recommendations"] = []
-
-# Inject custom global CSS for rich premium aesthetics
+# 1. Global CSS Styling Rules
 st.markdown(f"""
 <style>
-    /* Main body background and font */
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
     
     html, body, [class*="css"] {{
         font-family: 'Outfit', sans-serif;
     }}
     
-    /* Elegant Title and Header styling */
     .header-container {{
         background: linear-gradient(135deg, {APP_THEME_COLOR} 0%, #1E293B 100%);
         padding: 2.5rem;
@@ -89,7 +68,6 @@ st.markdown(f"""
         font-weight: 400;
     }}
     
-    /* Modern Glassmorphic Cards */
     .career-card {{
         background: rgba(30, 41, 59, 0.7);
         backdrop-filter: blur(10px);
@@ -130,7 +108,6 @@ st.markdown(f"""
         border: none;
     }}
     
-    /* Custom Sidebar Logo/Branding */
     .sidebar-brand {{
         text-align: center;
         padding: 1rem 0;
@@ -140,37 +117,115 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
-# Import sub-page modules
-from streamlit_app.home import render_home
-from streamlit_app.counsellor import render_counsellor
-from streamlit_app.explorer import render_explorer
-from streamlit_app.about import render_about
+# 2. Light Theme Overrides (Inject if selected)
+if st.session_state["theme"] == "light":
+    st.markdown("""
+    <style>
+        .stApp {
+            background-color: #F8FAFC !important;
+            color: #0F172A !important;
+        }
+        .career-card {
+            background: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
+            color: #0F172A !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+        }
+        .career-card:hover {
+            border-color: #3B82F6 !important;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.05) !important;
+        }
+        h1, h2, h3, h4, h5, h6, p, li, span, label, div {
+            color: #0F172A !important;
+        }
+        .stMarkdown p, .stMarkdown li, .stMarkdown span {
+            color: #1E293B !important;
+        }
+        .badge {
+            background: rgba(59, 130, 246, 0.08) !important;
+            color: #2563EB !important;
+            border: 1px solid rgba(59, 130, 246, 0.15) !important;
+        }
+        .sidebar-brand h2 {
+            color: #2563EB !important;
+        }
+        .header-title {
+            background: linear-gradient(to right, #2563EB, #1D4ED8, #3B82F6) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+        .header-subtitle {
+            color: #F1F5F9 !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
-# Sidebar navigation branding
-st.sidebar.markdown("""
-<div class="sidebar-brand">
-    <h2 style="color: #60A5FA; margin-bottom: 0; font-weight:700;">ApexPath AI</h2>
-    <p style="color: #94A3B8; font-size: 0.85rem;">Virtual Career Counsellor</p>
-</div>
-""", unsafe_allow_html=True)
+# 3. Route Access Protections (Block page rendering if unauthenticated)
+if "user_email" not in st.session_state or not st.session_state["user_email"]:
+    render_auth_pages()
+else:
+    # Set theme from database profile configuration
+    user_profile = db.get_user_profile(st.session_state["user_email"])
+    st.session_state["theme"] = user_profile.get("theme", "dark")
 
-# Navigation radio list
-page = st.sidebar.radio(
-    "Navigate to:",
-    ["Home", "Career Counsellor", "Career Explorer", "About Project"],
-    index=0
-)
+    # Import view render helper modules
+    from streamlit_app.dashboard import render_dashboard
+    from streamlit_app.counsellor import render_counsellor
+    from streamlit_app.career_match import render_career_match
+    from streamlit_app.roadmaps import render_roadmaps
+    from streamlit_app.resume_analyzer import render_resume_analyzer
+    from streamlit_app.home import render_home as render_analytics
+    from streamlit_app.chat_history import render_chat_history
+    from streamlit_app.profile import render_profile
+    from streamlit_app.settings import render_settings
 
-# Active Session details in sidebar footer
-st.sidebar.markdown("---")
-st.sidebar.caption(f"Session Active: `...{session_id[-8:]}`")
+    # Sidebar Navigation brand logo
+    st.sidebar.markdown("""
+    <div class="sidebar-brand">
+        <h2 style="color: #60A5FA; margin-bottom: 0; font-weight:700;">ApexPath AI</h2>
+        <p style="color: #94A3B8; font-size: 0.85rem;">Virtual Career Counsellor</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-# Route to respective render page
-if page == "Home":
-    render_home()
-elif page == "Career Counsellor":
-    render_counsellor()
-elif page == "Career Explorer":
-    render_explorer()
-elif page == "About Project":
-    render_about()
+    # Collapsible sidebar with icons + labels
+    page = st.sidebar.radio(
+        "Navigation Menu:",
+        [
+            "🏠 Dashboard",
+            "🤖 Career Counsellor",
+            "🏆 Career Match",
+            "🗺️ Study Roadmaps",
+            "📄 Resume Analyzer",
+            "📊 Analytics",
+            "📜 Chat History",
+            "👤 Profile",
+            "⚙️ Settings",
+            "🚪 Logout"
+        ],
+        index=0
+    )
+
+    st.sidebar.markdown("---")
+    st.sidebar.caption(f"Logged in as: `{st.session_state['user_email']}`")
+
+    # Routing redirection handlers
+    if page == "🏠 Dashboard":
+        render_dashboard()
+    elif page == "🤖 Career Counsellor":
+        render_counsellor()
+    elif page == "🏆 Career Match":
+        render_career_match()
+    elif page == "🗺️ Study Roadmaps":
+        render_roadmaps()
+    elif page == "📄 Resume Analyzer":
+        render_resume_analyzer()
+    elif page == "📊 Analytics":
+        render_analytics()
+    elif page == "📜 Chat History":
+        render_chat_history()
+    elif page == "👤 Profile":
+        render_profile()
+    elif page == "⚙️ Settings":
+        render_settings()
+    elif page == "🚪 Logout":
+        handle_logout()

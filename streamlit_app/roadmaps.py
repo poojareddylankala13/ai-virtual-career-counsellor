@@ -1,0 +1,188 @@
+import streamlit as st
+from utils.db_helper import DBHelper
+from utils.recommender import CareerRecommender
+
+db = DBHelper()
+recommender = CareerRecommender()
+
+
+def build_pdf_roadmap_bytes(career_name: str, roadmap_steps: list, certs: list, courses: list, projects: list) -> bytes:
+    """Generates a structured PDF byte-stream of the career roadmap using fpdf2."""
+    try:
+        from fpdf import FPDF
+    except ImportError:
+        # Fallback text format if fpdf is not installed
+        report = f"ApexPath AI Study Plan: {career_name}\n\n"
+        report += "MILESTONES:\n"
+        for i, s in enumerate(roadmap_steps, 1):
+            report += f"{i}. {s}\n"
+        report += "\nCERTIFICATIONS:\n" + "\n".join([f"- {c}" for c in certs])
+        report += "\n\nCOURSES:\n" + "\n".join([f"- {c}" for c in courses])
+        report += "\n\nPROJECTS:\n" + "\n".join([f"- {p}" for p in projects])
+        return report.encode("utf-8")
+
+    class PDF(FPDF):
+        def header(self):
+            self.set_font("helvetica", "B", 16)
+            self.set_text_color(59, 130, 246)  # Accent primary blue
+            self.cell(0, 10, "ApexPath AI Virtual Career Counsellor", 0, 1, "C")
+            self.set_font("helvetica", "I", 10)
+            self.set_text_color(148, 163, 184)
+            self.cell(0, 10, "Your Personalized Professional Study Roadmap", 0, 1, "C")
+            self.ln(10)
+
+        def footer(self):
+            self.set_y(-15)
+            self.set_font("helvetica", "I", 8)
+            self.set_text_color(148, 163, 184)
+            self.cell(0, 10, f"Page {self.page_no()}", 0, 0, "C")
+
+    pdf = PDF()
+    pdf.add_page()
+    
+    # Title Section
+    pdf.set_font("helvetica", "B", 14)
+    pdf.set_text_color(15, 23, 42)
+    pdf.cell(0, 10, f"Career Goal: {career_name}", 0, 1)
+    pdf.ln(5)
+
+    # 1. Milestones
+    pdf.set_font("helvetica", "B", 12)
+    pdf.set_text_color(30, 41, 59)
+    pdf.cell(0, 8, "Step-by-Step Learning Path", 0, 1)
+    pdf.set_font("helvetica", "", 10)
+    pdf.set_text_color(71, 85, 105)
+    for i, step in enumerate(roadmap_steps, start=1):
+        pdf.multi_cell(0, 6, f"{i}. {step}")
+        pdf.ln(2)
+    pdf.ln(5)
+
+    # 2. Certifications
+    pdf.set_font("helvetica", "B", 12)
+    pdf.set_text_color(30, 41, 59)
+    pdf.cell(0, 8, "Key Professional Certifications", 0, 1)
+    pdf.set_font("helvetica", "", 10)
+    pdf.set_text_color(71, 85, 105)
+    for cert in certs:
+        pdf.cell(0, 6, f"- {cert}", 0, 1)
+    pdf.ln(5)
+
+    # 3. Courses
+    pdf.set_font("helvetica", "B", 12)
+    pdf.set_text_color(30, 41, 59)
+    pdf.cell(0, 8, "Recommended Online Courses", 0, 1)
+    pdf.set_font("helvetica", "", 10)
+    pdf.set_text_color(71, 85, 105)
+    for course in courses:
+        pdf.cell(0, 6, f"- {course}", 0, 1)
+    pdf.ln(5)
+
+    # 4. Projects
+    pdf.set_font("helvetica", "B", 12)
+    pdf.set_text_color(30, 41, 59)
+    pdf.cell(0, 8, "Suggested Portfolio Projects", 0, 1)
+    pdf.set_font("helvetica", "", 10)
+    pdf.set_text_color(71, 85, 105)
+    for proj in projects:
+        pdf.cell(0, 6, f"- {proj}", 0, 1)
+
+    return pdf.output()
+
+
+def render_roadmaps():
+    user_email = st.session_state["user_email"]
+
+    st.markdown("""
+    <div class="header-container">
+        <div class="header-title">🗺️ Study Roadmaps & Learning Progress</div>
+        <div class="header-subtitle">Follow checklists, check off milestones, and download formatted PDFs of your saved learning trajectories.</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Fetch Saved Roadmaps
+    saved_list = db.get_saved_roadmaps(user_email)
+
+    if not saved_list:
+        st.info("You do not have any saved roadmaps yet. Visit the 'Career Match' section to select and pin a career roadmap to your profile!")
+        return
+
+    # Select box to toggle between saved roadmaps
+    col_sel, col_un = st.columns([3, 1])
+    with col_sel:
+        selected_career = st.selectbox("Select Active Study Plan:", saved_list)
+    
+    # Get Career Details
+    career_data = next((c for c in recommender.careers if c["name"] == selected_career), None)
+
+    if not career_data:
+        st.error("Career data could not be found in catalog.")
+        return
+
+    # Unsave roadmap button
+    with col_un:
+        st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
+        if st.button("Unpin Roadmap", key="unsave_btn", use_container_width=True):
+            db.unsave_roadmap(user_email, selected_career)
+            st.success(f"Removed {selected_career} from your saved roadmaps!")
+            st.rerun()
+
+    # Progress Calculation
+    steps = career_data.get("learning_roadmap", [])
+    total_steps = len(steps)
+    progress_state = db.get_roadmap_progress(user_email, selected_career)
+
+    done = sum(1 for val in progress_state.values() if val)
+    percentage = int((done / max(1, total_steps)) * 100)
+
+    # Display Metrics and Progress Bar
+    st.markdown("### 📈 Completed Milestones")
+    st.progress(done / max(1, total_steps))
+    st.write(f"**Progress Score:** {percentage}% Completed ({done} of {total_steps} milestones checked)")
+
+    # Checklist Container
+    st.markdown("### 📝 Checklist")
+    
+    for i, step in enumerate(steps):
+        is_completed = progress_state.get(i, False)
+        chk = st.checkbox(f"{i+1}. {step}", value=is_completed, key=f"step_{selected_career}_{i}")
+        
+        # If check state changed, update database
+        if chk != is_completed:
+            db.update_roadmap_progress(user_email, selected_career, i, 1 if chk else 0)
+            st.rerun()
+
+    st.markdown("---")
+    
+    # Download Section
+    col_certs, col_export = st.columns(2)
+    
+    with col_certs:
+        st.markdown("#### 🏅 Target Credentials & Projects")
+        st.markdown("**Recommended Certifications:**")
+        for cert in career_data.get("certifications", []):
+            st.write(f"✓ {cert}")
+        st.markdown("**Suggested Portfolio Projects:**")
+        for proj in career_data.get("projects", []):
+            st.write(f"⚡ {proj}")
+            
+    with col_export:
+        st.markdown("#### 📥 Export Study Plan")
+        st.write("Generate a printable PDF study plan covering the learning roadmap, suggested MOOCs, certifications, and portfolio details.")
+        
+        # Generate PDF Bytes
+        pdf_bytes = build_pdf_roadmap_bytes(
+            selected_career,
+            steps,
+            career_data.get("certifications", []),
+            career_data.get("courses", []),
+            career_data.get("projects", [])
+        )
+        
+        # Download Button
+        st.download_button(
+            label="Download Study Plan as PDF",
+            data=pdf_bytes,
+            file_name=f"Study_Plan_{selected_career.replace(' ', '_')}.pdf",
+            mime="application/pdf",
+            use_container_width=True
+        )

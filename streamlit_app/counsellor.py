@@ -1,13 +1,12 @@
 import streamlit as st
 import requests
+import uuid
 import json
-import os
 from config import RASA_WEBHOOK_URL, RASA_SERVER_URL, CAREER_DATASET_PATH
 from utils.db_helper import DBHelper
 from utils.recommender import CareerRecommender
 from utils.nltk_preprocessor import NLTKPreprocessor
 
-# Initialize database, recommender, and NLTK preprocessor
 db = DBHelper()
 recommender = CareerRecommender()
 preprocessor = NLTKPreprocessor()
@@ -42,26 +41,12 @@ def sync_rasa_slots(session_id: str, profile: dict):
         return False
 
 
-def get_rasa_response(session_id: str, message: str) -> list:
-    """Sends user message to Rasa REST webhook and returns bot utterances."""
-    payload = {"sender": session_id, "message": message}
-    try:
-        response = requests.post(RASA_WEBHOOK_URL, json=payload, timeout=3.0)
-        if response.status_code == 200:
-            return response.json()
-    except Exception:
-        pass
-    return []
-
-
 def handle_offline_fallback(user_msg: str, session_id: str) -> str:
     """
     Fallback NLP assistant using NLTK to parse inquiries
     and generate replies from careers.json when Rasa is offline.
     """
     msg_clean = user_msg.lower()
-    
-    # Load careers for search
     careers = recommender.careers
     
     # 1. Detect if inquiring about a specific career from the database
@@ -78,8 +63,6 @@ def handle_offline_fallback(user_msg: str, session_id: str) -> str:
     if matched_career:
         st.session_state["active_chat_career"] = matched_career
         c_name = matched_career["name"]
-        
-        # Check sub-questions using NLTK preprocessed tokens
         tokens = preprocessor.preprocess(msg_clean)
         
         if any(w in tokens for w in ["salary", "pay", "earn", "wage"]):
@@ -108,7 +91,7 @@ def handle_offline_fallback(user_msg: str, session_id: str) -> str:
         if any(w in tokens for w in ["project", "portfolio"]):
             projs = matched_career.get("projects", [])
             lines = "\n".join([f"• {proj}" for proj in projs])
-            return f"⚡ **Suggested Portfolio Projects for {c_name}**:\n\n{lines}"
+            return f"🛠️ **Suggested Portfolio Projects for {c_name}**:\n\n{lines}"
             
         if any(w in tokens for w in ["roadmap", "path", "step", "learn"]):
             steps = matched_career.get("learning_roadmap", [])
@@ -122,7 +105,6 @@ def handle_offline_fallback(user_msg: str, session_id: str) -> str:
                 f"• **Future Outlook**: {matched_career.get('future_scope', '')}"
             )
 
-        # General description if career name matched but no sub-questions
         return (
             f"**{c_name}** ({matched_career['domain']}):\n\n"
             f"{matched_career['description']}\n\n"
@@ -164,125 +146,69 @@ def handle_offline_fallback(user_msg: str, session_id: str) -> str:
 
 
 def render_counsellor():
-    session_id = st.session_state["session_id"]
+    user_email = st.session_state["user_email"]
     profile = st.session_state["user_profile"]
 
     st.markdown("""
     <div class="header-container">
-        <div class="header-title">💼 Interactive Career Counselling Hub</div>
-        <div class="header-subtitle">Build your academic profile, evaluate matching career statistics, and chat with the AI counsellor.</div>
+        <div class="header-title">🤖 AI Career Counsellor Chat</div>
+        <div class="header-subtitle">Discuss qualifications, seek career advice, ask for roadmaps, projects, or salaries in real-time.</div>
     </div>
     """, unsafe_allow_html=True)
 
-    col_left, col_right = st.columns([5, 7])
-
-    # Left Column: Profile Form & Career Matching results
-    with col_left:
-        st.markdown("### 📋 User Profile Builder")
-        with st.form("profile_form"):
-            name = st.text_input("Full Name", value=profile.get("name", ""))
-            
-            c1, c2 = st.columns(2)
-            with c1:
-                age = st.number_input("Age", min_value=12, max_value=60, value=int(profile.get("age", 18)))
-                highest_qual = st.selectbox(
-                    "Highest Qualification",
-                    ["High School", "Diploma", "Bachelor's", "Master's", "PhD"],
-                    index=["High School", "Diploma", "Bachelor's", "Master's", "PhD"].index(profile.get("highest_qualification", "High School"))
-                )
-            with c2:
-                degree = st.text_input("Current/Planned Degree (e.g., B.Tech, B.Com, BFA)", value=profile.get("current_degree", ""))
-                ac_year = st.selectbox(
-                    "Academic Year",
-                    ["1st Year", "2nd Year", "3rd Year", "4th Year", "Graduated"],
-                    index=["1st Year", "2nd Year", "3rd Year", "4th Year", "Graduated"].index(profile.get("academic_year", "1st Year"))
-                )
-
-            skills = st.text_area("Skills (comma-separated, e.g. Python, SQL, Writing, Excel)", value=profile.get("skills", ""))
-            interests = st.text_area("Interests / Hobbies (comma-separated, e.g. Coding, Painting, Investing)", value=profile.get("interests", ""))
-            
-            c3, c4 = st.columns(2)
-            with c3:
-                domain = st.selectbox(
-                    "Preferred Career Domain",
-                    ["Technology", "Commerce", "Arts", "Healthcare", "Business", "Government"],
-                    index=["Technology", "Commerce", "Arts", "Healthcare", "Business", "Government"].index(profile.get("preferred_domain", "Technology"))
-                )
-            with c4:
-                goal = st.text_input("Specific Career Goal (e.g. Lead tech teams)", value=profile.get("career_goal", ""))
-
-            save_btn = st.form_submit_button("Save & Match Career Paths")
-
-            if save_btn:
-                # Update Session State
-                updated_profile = {
-                    "name": name,
-                    "age": age,
-                    "highest_qualification": highest_qual,
-                    "current_degree": degree,
-                    "academic_year": ac_year,
-                    "skills": skills,
-                    "interests": interests,
-                    "preferred_domain": domain,
-                    "career_goal": goal
-                }
-                st.session_state["user_profile"] = updated_profile
-                
-                # Save to Database
-                db.save_profile(session_id, updated_profile)
-                
-                # Synchronize slots with Rasa if online
-                sync_success = sync_rasa_slots(session_id, updated_profile)
-                
-                # Compute Recommendations
-                recs = recommender.recommend(updated_profile)
-                st.session_state["recommendations"] = recs
-                
-                st.success("Profile saved successfully! Career recommendations updated.")
-                if sync_success:
-                    st.info("Profile slots synchronized with the Rasa chatbot tracker state.")
-
-        # Matches Result Section
-        st.markdown("### 🏆 Top Recommended Career Matches")
-        recs = st.session_state.get("recommendations", [])
-        if not recs:
-            # Attempt load on page launch if not calculated
-            if any([profile[k] for k in ["skills", "interests", "current_degree"] if profile[k]]):
-                recs = recommender.recommend(profile)
-                st.session_state["recommendations"] = recs
-
-        if recs:
-            for rec in recs[:3]:  # Top 3 matches
-                st.markdown(f"""
-                <div class="career-card">
-                    <span class="score-badge">{rec['match_percentage']}% Match</span>
-                    <span class="badge">{rec['domain']}</span>
-                    <h3 style="margin-top:0.5rem; margin-bottom:0.5rem; color:#60A5FA;">{rec['name']}</h3>
-                    <p style="font-size:0.9rem; color:#E2E8F0; margin-bottom:0.8rem;">{rec['reason']}</p>
-                </div>
-                """, unsafe_allow_html=True)
-                
-                with st.expander(f"View details for {rec['name']}"):
-                    st.write(rec["description"])
-                    st.markdown("**Salary Details:**")
-                    st.write(f"- Entry Level: {rec['salary_range']['entry']}")
-                    st.write(f"- Mid Level: {rec['salary_range']['mid']}")
-                    st.write(f"- Senior Level: {rec['salary_range']['senior']}")
-                    
-                    st.markdown("**Recommended Courses:**")
-                    for c in rec["recommended_courses"]:
-                        st.write(f"- {c}")
-                        
-                    st.markdown("**Suggested Project:**")
-                    for p in rec["suggested_projects"]:
-                        st.write(f"- {p}")
+    # Establish Active Chat Session
+    sessions = db.get_chat_sessions(user_email)
+    
+    if "active_session_id" not in st.session_state or not st.session_state["active_session_id"]:
+        if sessions:
+            st.session_state["active_session_id"] = sessions[0]["session_id"]
         else:
-            st.info("Fill out your profile details above to discover tailored career recommendations.")
+            # Create first session
+            new_id = str(uuid.uuid4())
+            db.create_chat_session(user_email, new_id, "New Chat Session")
+            st.session_state["active_session_id"] = new_id
+            sessions = db.get_chat_sessions(user_email)
 
-    # Right Column: Chatbot Interface
-    with col_right:
-        st.markdown("### 🤖 Chat with AI Counsellor")
+    active_session_id = st.session_state["active_session_id"]
+
+    # Layout: Left column for session history, Right column for chat
+    col_hist, col_chat = st.columns([3, 7])
+
+    with col_hist:
+        st.markdown("### 💬 Chat History")
         
+        # New Chat Button
+        if st.button("➕ Start New Chat", key="new_chat_btn", use_container_width=True):
+            new_id = str(uuid.uuid4())
+            db.create_chat_session(user_email, new_id, "New Chat Session")
+            st.session_state["active_session_id"] = new_id
+            st.rerun()
+
+        st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+
+        # List existing sessions as buttons
+        for s in sessions:
+            is_active = s["session_id"] == active_session_id
+            bg_color = "background-color: rgba(59, 130, 246, 0.08);" if is_active else ""
+            
+            col_b, col_del = st.columns([8, 2])
+            with col_b:
+                # Custom styled button for session list
+                if st.button(
+                    f"💬 {s['title'][:22]}...", 
+                    key=f"sess_{s['session_id']}", 
+                    use_container_width=True
+                ):
+                    st.session_state["active_session_id"] = s["session_id"]
+                    st.rerun()
+            with col_del:
+                if st.button("🗑️", key=f"del_sess_{s['session_id']}", use_container_width=True):
+                    db.delete_chat_session(s["session_id"])
+                    if st.session_state["active_session_id"] == s["session_id"]:
+                        st.session_state.pop("active_session_id", None)
+                    st.rerun()
+
+    with col_chat:
         # Check Rasa Server status
         rasa_online = False
         try:
@@ -297,53 +223,86 @@ def render_counsellor():
         else:
             st.caption("🟡 **Rasa Bot Offline** (Operating in NLTK fallback mode)")
 
-        # Clear Chat Button
-        if st.button("Reset Conversation Logs", key="clear_chat"):
-            db.clear_chat_history(session_id)
-            st.rerun()
-
         # Chat container window
-        chat_container = st.container(height=450)
-        
-        # Load conversation history from SQL
-        history = db.get_chat_history(session_id)
-        
+        chat_container = st.container(height=400)
+        history = db.get_chat_history(active_session_id)
+
+        # Auto-scroll script injection
+        st.markdown("""
+        <script>
+            var chat = window.parent.document.querySelector('[data-testid="stChatMessageContainer"]');
+            if (chat) {
+                chat.scrollTop = chat.scrollHeight;
+            }
+        </script>
+        """, unsafe_allow_html=True)
+
         with chat_container:
             if not history:
-                st.chat_message("assistant").write("Hello! I am your AI Virtual Career Counsellor. 🚀 Tell me your academic interests or ask questions like 'What is the salary of an AI Engineer?'")
+                st.chat_message("assistant").write("Hello! I am your AI Career Counsellor. 🚀 Tell me your academic interests or click on one of the suggested questions below!")
             else:
                 for chat in history:
-                    st.chat_message(chat["sender"]).write(chat["message"])
+                    with st.chat_message(chat["sender"]):
+                        st.write(chat["message"])
+                        st.markdown(f'<span style="font-size:0.7rem; color:#94A3B8; float:right;">{chat.get("timestamp", "")}</span>', unsafe_allow_html=True)
 
-        # User query input
-        user_input = st.chat_input("Ask something (e.g. show roadmap for full stack developer)...")
+        # Suggested Questions
+        st.markdown("💡 **Suggested Questions:**")
+        sq_cols = st.columns(3)
+        suggestions = [
+            "Give me the roadmap for AI Engineer",
+            "What is the salary of a Data Scientist?",
+            "What projects should a UI/UX Designer build?"
+        ]
+        
+        click_query = ""
+        for idx, sug in enumerate(suggestions):
+            with sq_cols[idx % 3]:
+                if st.button(sug, key=f"sug_{idx}", use_container_width=True):
+                    click_query = sug
 
-        if user_input:
-            # 1. Render user message
-            chat_container.chat_message("user").write(user_input)
-            db.add_chat_message(session_id, "user", user_input)
+        # Chat input
+        user_input = st.chat_input("Ask about roles, roadmaps, credentials...")
+
+        # Process user query (either clicked suggestions or typed input)
+        active_query = click_query or user_input
+
+        if active_query:
+            # 1. Update session title if first message
+            if not history:
+                short_title = active_query[:25] + "..." if len(active_query) > 25 else active_query
+                db.rename_chat_session(active_session_id, short_title)
+
+            # 2. Render and save user message
+            db.add_chat_message(active_session_id, "user", active_query)
             
-            # 2. Get AI Response
-            if rasa_online:
-                # Synchronize slots first before message
-                sync_rasa_slots(session_id, st.session_state["user_profile"])
-                
-                # Fetch Rasa responses
-                bot_responses = get_rasa_response(session_id, user_input)
-                if bot_responses:
-                    for r in bot_responses:
-                        text = r.get("text", "")
-                        if text:
-                            chat_container.chat_message("assistant").write(text)
-                            db.add_chat_message(session_id, "assistant", text)
+            # Show typing animation/spinner
+            with st.spinner("AI Counsellor is thinking..."):
+                if rasa_online:
+                    # Sync slots
+                    sync_rasa_slots(active_session_id, profile)
+                    
+                    # Fetch response from Rasa
+                    bot_responses = []
+                    try:
+                        payload = {"sender": active_session_id, "message": active_query}
+                        response = requests.post(RASA_WEBHOOK_URL, json=payload, timeout=3.0)
+                        if response.status_code == 200:
+                            bot_responses = response.json()
+                    except Exception:
+                        pass
+                    
+                    if bot_responses:
+                        for r in bot_responses:
+                            text = r.get("text", "")
+                            if text:
+                                db.add_chat_message(active_session_id, "assistant", text)
+                    else:
+                        fallback_reply = "I'm processing this locally: " + handle_offline_fallback(active_query, active_session_id)
+                        db.add_chat_message(active_session_id, "assistant", fallback_reply)
                 else:
-                    fallback_reply = "I'm having trouble retrieving details. Let me process this locally: " + handle_offline_fallback(user_input, session_id)
-                    chat_container.chat_message("assistant").write(fallback_reply)
-                    db.add_chat_message(session_id, "assistant", fallback_reply)
-            else:
-                # Local fallback using NLTK preprocessor
-                fallback_reply = handle_offline_fallback(user_input, session_id)
-                chat_container.chat_message("assistant").write(fallback_reply)
-                db.add_chat_message(session_id, "assistant", fallback_reply)
-                
+                    # Local NLTK fallback
+                    fallback_reply = handle_offline_fallback(active_query, active_session_id)
+                    db.add_chat_message(active_session_id, "assistant", fallback_reply)
+
             st.rerun()
